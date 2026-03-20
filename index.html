@@ -1,0 +1,2676 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海南島環島高鐵遊｜台灣出發完全攻略</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700;900&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ==============================
+   ROOT VARIABLES
+============================== */
+:root{
+  --ink:#0D1B2A;
+  --deep:#0A3040;
+  --ocean:#0B6E8A;
+  --teal:#0AADA0;
+  --aqua:#38CEC5;
+  --sand:#F2E4C4;
+  --ivory:#FAF6EE;
+  --gold:#C9921A;
+  --amber:#E8A820;
+  --coral:#D9553B;
+  --palm:#2B6840;
+  --mint:#E4F5F3;
+  --white:#FFFFFF;
+  --gray:#7A8896;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans TC',sans-serif;background:var(--ivory);color:var(--ink);overflow-x:hidden;}
+
+/* ==============================
+   SCROLLBAR
+============================== */
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:var(--ivory);}
+::-webkit-scrollbar-thumb{background:var(--teal);border-radius:3px;}
+
+/* ==============================
+   HERO
+============================== */
+.hero{
+  min-height:100vh;
+  background:var(--deep);
+  position:relative;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  overflow:hidden;padding:2rem;
+  text-align:center;
+}
+/* animated wave bg */
+.hero-waves{position:absolute;inset:0;pointer-events:none;}
+.hero-waves svg{position:absolute;width:200%;animation:wavemove 18s linear infinite;}
+.hero-waves svg:nth-child(1){bottom:0;opacity:.12;animation-duration:18s;}
+.hero-waves svg:nth-child(2){bottom:40px;opacity:.07;animation-duration:26s;animation-direction:reverse;}
+.hero-waves svg:nth-child(3){bottom:80px;opacity:.05;animation-duration:34s;}
+@keyframes wavemove{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* stars */
+.hero-stars{position:absolute;inset:0;overflow:hidden;}
+.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle 3s infinite alternate;}
+@keyframes twinkle{0%{opacity:.1;}100%{opacity:.6;}}
+
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(10,173,160,.25);border:1px solid rgba(10,173,160,.5);
+  color:var(--aqua);padding:.45rem 1.4rem;border-radius:50px;
+  font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;
+  margin-bottom:1.8rem;backdrop-filter:blur(8px);
+  animation:fadeUp .9s ease both;
+}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,9vw,7.5rem);font-weight:700;
+  color:var(--white);line-height:1;
+  animation:fadeUp .9s .15s ease both;
+  text-shadow:0 8px 40px rgba(0,0,0,.5);
+}
+.hero-title em{color:var(--amber);font-style:italic;}
+.hero-sub{
+  font-size:clamp(.9rem,2vw,1.2rem);color:rgba(255,255,255,.65);
+  letter-spacing:.2em;margin-top:1.2rem;font-weight:300;
+  animation:fadeUp .9s .3s ease both;
+}
+.hero-chips{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;
+  margin-top:3rem;animation:fadeUp .9s .45s ease both;
+}
+.hero-chip{
+  display:flex;flex-direction:column;align-items:center;gap:.3rem;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  padding:.9rem 1.6rem;border-radius:14px;backdrop-filter:blur(12px);
+  min-width:100px;transition:background .3s;
+}
+.hero-chip:hover{background:rgba(255,255,255,.14);}
+.hero-chip .ci{font-size:1.4rem;}
+.hero-chip .cl{font-size:.65rem;color:rgba(255,255,255,.45);letter-spacing:.12em;text-transform:uppercase;}
+.hero-chip .cv{font-size:.95rem;color:var(--white);font-weight:700;font-family:'Noto Serif TC',serif;margin-top:.1rem;}
+
+.scroll-hint{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  color:rgba(255,255,255,.35);font-size:.72rem;letter-spacing:.15em;
+  animation:fadeUp .9s .9s ease both;
+}
+.scroll-arrow{
+  width:24px;height:24px;border-right:2px solid rgba(255,255,255,.35);
+  border-bottom:2px solid rgba(255,255,255,.35);
+  transform:rotate(45deg);animation:bounce 1.5s infinite;margin-top:.2rem;
+}
+@keyframes bounce{0%,100%{transform:rotate(45deg) translateY(0);}50%{transform:rotate(45deg) translateY(5px);}}
+
+.hero-wave-bottom{position:absolute;bottom:-1px;left:0;width:100%;}
+
+/* ==============================
+   STICKY NAV
+============================== */
+.nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(10,48,64,.97);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(10,173,160,.2);
+}
+.nav-inner{
+  max-width:1280px;margin:0 auto;
+  display:flex;align-items:center;gap:0;overflow-x:auto;
+  scrollbar-width:none;
+}
+.nav-inner::-webkit-scrollbar{display:none;}
+.nav-logo{padding:.9rem 1.5rem;font-family:'Noto Serif TC',serif;font-weight:700;
+  color:var(--amber);font-size:.9rem;white-space:nowrap;border-right:1px solid rgba(255,255,255,.08);}
+.nav-link{
+  padding:.95rem 1.2rem;color:rgba(255,255,255,.6);text-decoration:none;
+  font-size:.8rem;white-space:nowrap;font-weight:500;letter-spacing:.05em;
+  display:flex;align-items:center;gap:.4rem;
+  border-bottom:2px solid transparent;transition:all .25s;
+}
+.nav-link:hover{color:var(--amber);border-bottom-color:var(--amber);}
+
+/* ==============================
+   RIBBON
+============================== */
+.ribbon{
+  background:linear-gradient(90deg,var(--teal),var(--ocean),var(--deep));
+  padding:1rem 2rem;text-align:center;overflow:hidden;position:relative;
+}
+.ribbon::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0,rgba(255,255,255,.04) 1px,transparent 1px,transparent 60px);
+}
+.ribbon p{font-family:'Noto Serif TC',serif;font-size:1rem;color:var(--white);
+  letter-spacing:.18em;position:relative;}
+.ribbon span{color:var(--amber);font-weight:700;}
+
+/* ==============================
+   CHAPTER SCAFFOLD
+============================== */
+.ch-wrap{padding:5.5rem 1.5rem;}
+.ch-wrap.dark{background:var(--deep);}
+.ch-wrap.mid{background:#F7EFE0;}
+.ch-wrap.slate{background:#0D2433;}
+.ch-wrap.mint{background:var(--mint);}
+
+.ch-inner{max-width:1280px;margin:0 auto;}
+
+.ch-head{display:flex;align-items:flex-end;gap:1.5rem;margin-bottom:2.5rem;}
+.ch-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:7rem;font-weight:700;line-height:1;flex-shrink:0;
+  color:rgba(11,110,138,.12);
+}
+.dark .ch-num,.slate .ch-num{color:rgba(255,255,255,.05);}
+.ch-meta .tag{
+  display:inline-block;background:var(--teal);color:var(--white);
+  padding:.3rem 1rem;border-radius:30px;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem;
+}
+.ch-meta h2{
+  font-family:'Noto Serif TC',serif;
+  font-size:clamp(1.6rem,4vw,2.8rem);font-weight:900;
+  color:var(--deep);line-height:1.15;
+}
+.dark .ch-meta h2,.slate .ch-meta h2{color:var(--white);}
+
+.divider{width:56px;height:3px;background:linear-gradient(90deg,var(--teal),var(--aqua));
+  border-radius:2px;margin:1rem 0 2rem;}
+
+.lead{font-size:1.05rem;line-height:1.95;color:#5A6B78;max-width:760px;margin-bottom:2.5rem;}
+.lead-light{font-size:1rem;line-height:1.95;color:rgba(255,255,255,.6);max-width:760px;margin-bottom:2.5rem;}
+
+/* ==============================
+   CH1 – HOTELS
+============================== */
+.hotel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.6rem;}
+.hotel-card{
+  background:var(--white);border-radius:18px;overflow:hidden;
+  box-shadow:0 3px 20px rgba(11,110,138,.07);
+  border:1px solid rgba(11,110,138,.07);
+  transition:transform .3s,box-shadow .3s;
+}
+.hotel-card:hover{transform:translateY(-5px);box-shadow:0 14px 40px rgba(11,110,138,.14);}
+.hc-top{padding:1.6rem 1.6rem 1.2rem;position:relative;overflow:hidden;}
+.hc-top::after{content:attr(data-emoji);position:absolute;right:-8px;top:-8px;
+  font-size:4.5rem;opacity:.1;}
+.hc-city{font-size:.68rem;letter-spacing:.2em;color:rgba(255,255,255,.65);
+  text-transform:uppercase;margin-bottom:.3rem;}
+.hc-name{font-family:'Noto Serif TC',serif;font-size:1.15rem;font-weight:700;color:var(--white);}
+.hc-stars{color:var(--amber);font-size:.85rem;margin-top:.35rem;}
+.hc-station{display:inline-flex;align-items:center;gap:.3rem;
+  background:rgba(255,255,255,.15);padding:.2rem .7rem;border-radius:20px;
+  font-size:.7rem;color:rgba(255,255,255,.8);margin-top:.6rem;}
+.hc-body{padding:1.2rem 1.6rem 1.5rem;}
+.hc-feat{display:flex;align-items:center;gap:.5rem;font-size:.84rem;
+  color:#556;margin-bottom:.45rem;}
+.hc-feat::before{content:'✦';color:var(--teal);font-size:.6rem;}
+.hc-pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem;}
+.pill{background:rgba(10,173,160,.09);color:var(--teal);
+  padding:.22rem .7rem;border-radius:20px;font-size:.72rem;
+  border:1px solid rgba(10,173,160,.22);}
+.pill.gold{background:rgba(201,146,26,.09);color:var(--gold);border-color:rgba(201,146,26,.25);}
+.pill.red{background:rgba(217,85,59,.09);color:var(--coral);border-color:rgba(217,85,59,.22);}
+
+/* ==============================
+   CH2 – ITINERARY (STATION-BASED)
+============================== */
+.day-nav{
+  display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:3rem;
+}
+.day-btn{
+  padding:.5rem 1.1rem;border-radius:30px;font-size:.8rem;
+  border:1.5px solid rgba(11,110,138,.25);color:var(--ocean);
+  cursor:pointer;background:transparent;font-family:'Noto Sans TC',sans-serif;
+  transition:all .25s;font-weight:500;
+}
+.day-btn:hover,.day-btn.active{
+  background:var(--ocean);color:var(--white);border-color:var(--ocean);
+}
+
+.day-block{display:none;}
+.day-block.visible{display:block;}
+
+.day-header{
+  display:flex;align-items:center;gap:1.5rem;
+  background:linear-gradient(135deg,var(--deep),var(--ocean));
+  border-radius:18px;padding:1.8rem 2rem;margin-bottom:2rem;
+  position:relative;overflow:hidden;
+}
+.day-header::after{
+  content:attr(data-bg);position:absolute;right:-1rem;top:-1rem;
+  font-size:7rem;opacity:.1;
+}
+.day-num-badge{
+  font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:700;
+  color:var(--amber);line-height:1;flex-shrink:0;
+}
+.day-info .day-title{
+  font-family:'Noto Serif TC',serif;font-size:1.4rem;font-weight:900;color:var(--white);}
+.day-info .day-route{
+  font-size:.85rem;color:rgba(255,255,255,.6);margin-top:.3rem;letter-spacing:.05em;}
+.day-info .day-station-badge{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:rgba(10,173,160,.3);border:1px solid rgba(10,173,160,.5);
+  color:var(--aqua);padding:.25rem .8rem;border-radius:20px;
+  font-size:.72rem;margin-top:.5rem;letter-spacing:.08em;
+}
+
+.day-content{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+@media(max-width:700px){.day-content{grid-template-columns:1fr;}}
+
+.day-card{
+  background:var(--white);border-radius:14px;padding:1.4rem;
+  border:1px solid rgba(11,110,138,.08);
+  box-shadow:0 2px 12px rgba(11,110,138,.05);
+}
+.day-card-title{
+  font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;
+  color:var(--deep);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem;
+}
+.day-card-title span{font-size:1.2rem;}
+.day-step{
+  display:flex;gap:.8rem;margin-bottom:.8rem;align-items:flex-start;
+}
+.day-step-time{
+  font-size:.72rem;color:var(--teal);font-weight:700;white-space:nowrap;
+  min-width:2.8rem;padding-top:.15rem;letter-spacing:.03em;
+}
+.day-step-text{font-size:.86rem;color:#445;line-height:1.7;}
+.day-step-text strong{color:var(--deep);}
+
+.transport-badge{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:linear-gradient(90deg,var(--ocean),var(--teal));
+  color:var(--white);padding:.3rem .9rem;border-radius:20px;
+  font-size:.75rem;font-weight:600;margin-top:.5rem;
+}
+
+/* Station progress bar */
+.station-progress{
+  display:flex;align-items:center;gap:0;
+  background:linear-gradient(135deg,var(--deep),#0B4A60);
+  border-radius:18px;padding:2rem 2.5rem;margin-bottom:3rem;
+  overflow-x:auto;scrollbar-width:none;
+}
+.station-progress::-webkit-scrollbar{display:none;}
+.sp-item{display:flex;flex-direction:column;align-items:center;gap:.5rem;flex-shrink:0;}
+.sp-dot{
+  width:14px;height:14px;border-radius:50%;
+  background:var(--amber);border:2.5px solid var(--white);
+  transition:transform .3s;
+}
+.sp-dot.highlight{background:var(--coral);transform:scale(1.4);}
+.sp-dot.west{background:var(--aqua);}
+.sp-name{font-size:.72rem;color:rgba(255,255,255,.8);font-weight:600;
+  white-space:nowrap;text-align:center;max-width:50px;}
+.sp-day{font-size:.62rem;color:var(--amber);}
+.sp-line{flex:1;height:3px;background:rgba(255,255,255,.2);min-width:24px;
+  align-self:center;margin-bottom:1.2rem;}
+.sp-line.west-line{background:rgba(56,206,197,.3);}
+
+/* ==============================
+   CH3 – SPOTS
+============================== */
+.spots-outer{background:var(--slate,#0D2433);padding:5.5rem 1.5rem;}
+.spot-tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.5rem;}
+.spot-tab{
+  padding:.5rem 1.2rem;border-radius:30px;font-size:.8rem;
+  border:1.5px solid rgba(255,255,255,.15);color:rgba(255,255,255,.55);
+  cursor:pointer;background:transparent;font-family:'Noto Sans TC',sans-serif;
+  transition:all .25s;
+}
+.spot-tab:hover,.spot-tab.active{background:var(--teal);color:var(--white);border-color:var(--teal);}
+
+.spot-panel{display:none;}
+.spot-panel.visible{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.8rem;}
+
+.spot-card{
+  border-radius:20px;overflow:hidden;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+  transition:transform .3s,background .3s;
+}
+.spot-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.07);}
+.spot-visual{
+  height:150px;display:flex;align-items:center;justify-content:center;
+  font-size:5rem;position:relative;overflow:hidden;
+}
+.badge-5a{
+  position:absolute;top:.9rem;right:.9rem;
+  background:var(--coral);color:var(--white);
+  padding:.25rem .7rem;border-radius:20px;font-size:.68rem;font-weight:700;letter-spacing:.08em;
+}
+.badge-family{
+  position:absolute;top:.9rem;left:.9rem;
+  background:var(--palm);color:var(--white);
+  padding:.25rem .7rem;border-radius:20px;font-size:.68rem;font-weight:700;
+}
+.badge-scenic{
+  position:absolute;top:.9rem;left:.9rem;
+  background:var(--ocean);color:var(--white);
+  padding:.25rem .7rem;border-radius:20px;font-size:.68rem;font-weight:700;
+}
+.spot-body{padding:1.4rem 1.6rem 1.6rem;}
+.spot-loc{font-size:.7rem;color:var(--amber);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.35rem;}
+.spot-name{font-family:'Noto Serif TC',serif;font-size:1.25rem;font-weight:700;
+  color:var(--white);margin-bottom:.7rem;}
+.spot-desc{font-size:.87rem;color:rgba(255,255,255,.6);line-height:1.85;margin-bottom:1rem;}
+.spot-meta{display:flex;flex-wrap:wrap;gap:.8rem;font-size:.78rem;color:rgba(255,255,255,.4);}
+
+/* ==============================
+   CH4 – RESTAURANTS
+============================== */
+.food-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.5rem;}
+.food-card{
+  background:var(--white);border-radius:16px;padding:1.6rem;
+  box-shadow:0 2px 18px rgba(11,110,138,.06);
+  border:1px solid rgba(11,110,138,.07);transition:all .3s;
+}
+.food-card:hover{box-shadow:0 10px 32px rgba(11,110,138,.12);transform:translateY(-3px);}
+.food-icon{font-size:2.8rem;display:block;margin-bottom:1rem;}
+.food-loc{font-size:.7rem;color:var(--teal);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.3rem;}
+.food-name{font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:700;
+  color:var(--deep);margin-bottom:.6rem;}
+.food-desc{font-size:.85rem;color:#667;line-height:1.8;}
+.must-order{
+  display:flex;align-items:flex-start;gap:.4rem;margin-top:.9rem;
+  background:rgba(201,146,26,.08);border-left:3px solid var(--gold);
+  padding:.5rem .7rem;border-radius:0 6px 6px 0;
+  font-size:.8rem;color:var(--gold);font-weight:500;line-height:1.6;
+}
+
+/* ==============================
+   CH5 – TIPS
+============================== */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.4rem;}
+.tip-card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;padding:1.8rem;backdrop-filter:blur(8px);
+}
+.tip-icon{font-size:2rem;margin-bottom:.8rem;display:block;}
+.tip-ttl{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;
+  color:var(--amber);margin-bottom:.9rem;}
+.tip-ul{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
+.tip-ul li{font-size:.86rem;color:rgba(255,255,255,.72);line-height:1.7;
+  padding-left:1.1rem;position:relative;}
+.tip-ul li::before{content:'›';position:absolute;left:0;color:var(--teal);font-weight:700;}
+
+.sos-box{
+  background:rgba(217,85,59,.12);border:1px solid rgba(217,85,59,.3);
+  border-radius:18px;padding:2rem;margin-top:2rem;
+}
+.sos-box h3{color:var(--coral);font-family:'Noto Serif TC',serif;font-size:1.2rem;
+  margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem;}
+.sos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;}
+.sos-item .sl{font-size:.72rem;color:rgba(255,255,255,.4);}
+.sos-item .sv{font-size:1rem;color:var(--white);font-weight:700;
+  font-family:'Noto Serif TC',serif;margin-top:.15rem;}
+
+/* ==============================
+   CH6 – SOUVENIRS
+============================== */
+.sv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.4rem;}
+.sv-card{
+  background:var(--white);border-radius:18px;padding:1.8rem 1.4rem;
+  text-align:center;box-shadow:0 3px 16px rgba(11,110,138,.07);
+  border:1px solid rgba(201,146,26,.15);transition:transform .3s;
+}
+.sv-card:hover{transform:scale(1.04);}
+.sv-icon{font-size:3rem;display:block;margin-bottom:.8rem;}
+.sv-name{font-family:'Noto Serif TC',serif;font-size:.95rem;font-weight:700;
+  color:var(--deep);margin-bottom:.45rem;}
+.sv-desc{font-size:.8rem;color:#889;line-height:1.65;}
+.sv-price{
+  display:inline-block;background:var(--gold);color:var(--white);
+  padding:.2rem .85rem;border-radius:20px;font-size:.75rem;
+  font-weight:700;margin-top:.75rem;letter-spacing:.04em;
+}
+.sv-tip{display:inline-block;background:rgba(10,173,160,.1);color:var(--teal);
+  padding:.15rem .65rem;border-radius:20px;font-size:.68rem;
+  margin-top:.4rem;border:1px solid rgba(10,173,160,.2);}
+
+/* ==============================
+   CH0 – DEPARTURE FROM TAIWAN
+============================== */
+.depart-hero{
+  background:linear-gradient(160deg,#05111A 0%,#0A2535 40%,#0B4A62 100%);
+  padding:5.5rem 1.5rem;position:relative;overflow:hidden;
+}
+.depart-hero::before{
+  content:'✈';position:absolute;right:-2rem;top:50%;transform:translateY(-50%);
+  font-size:20rem;opacity:.03;pointer-events:none;
+}
+.route-visual{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;flex-wrap:nowrap;overflow-x:auto;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;padding:2rem 2.5rem;margin-bottom:3rem;
+  scrollbar-width:none;
+}
+.route-visual::-webkit-scrollbar{display:none;}
+.rv-city{
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;flex-shrink:0;
+}
+.rv-circle{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;border:2px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.07);
+}
+.rv-circle.highlight{background:var(--teal);border-color:var(--teal);}
+.rv-circle.end{background:var(--coral);border-color:var(--coral);}
+.rv-label{font-size:.8rem;color:rgba(255,255,255,.7);font-weight:600;text-align:center;}
+.rv-sub{font-size:.65rem;color:rgba(255,255,255,.35);text-align:center;}
+.rv-arrow{
+  flex:1;min-width:40px;display:flex;flex-direction:column;align-items:center;
+  gap:.3rem;padding:0 .5rem;margin-bottom:1.8rem;
+}
+.rv-line{height:2px;width:100%;background:linear-gradient(90deg,rgba(10,173,160,.4),rgba(10,173,160,.8),rgba(10,173,160,.4));}
+.rv-info{font-size:.65rem;color:var(--aqua);white-space:nowrap;letter-spacing:.05em;}
+
+/* Flight cards */
+.flight-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.4rem;margin-bottom:3rem;}
+.flight-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;padding:1.6rem;backdrop-filter:blur(8px);
+  transition:background .3s,transform .3s;
+}
+.flight-card:hover{background:rgba(255,255,255,.09);transform:translateY(-4px);}
+.fc-airline{
+  display:flex;align-items:center;gap:.8rem;margin-bottom:1.1rem;
+}
+.fc-logo{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;flex-shrink:0;
+}
+.fc-name{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--white);}
+.fc-code{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.1rem;letter-spacing:.08em;}
+.fc-route{
+  display:flex;align-items:center;gap:.6rem;
+  background:rgba(255,255,255,.06);border-radius:10px;
+  padding:.8rem 1rem;margin-bottom:1rem;
+}
+.fc-port{text-align:center;}
+.fc-iata{font-size:1.2rem;font-weight:700;color:var(--amber);font-family:'Cormorant Garamond',serif;}
+.fc-city-name{font-size:.68rem;color:rgba(255,255,255,.5);margin-top:.1rem;}
+.fc-mid{flex:1;text-align:center;}
+.fc-duration{font-size:.72rem;color:var(--aqua);}
+.fc-plane{font-size:1.2rem;}
+.fc-dash{height:1px;background:rgba(255,255,255,.15);margin:.2rem 0;}
+.fc-details{display:flex;flex-direction:column;gap:.4rem;}
+.fc-row{display:flex;justify-content:space-between;font-size:.82rem;}
+.fc-row .lbl{color:rgba(255,255,255,.4);}
+.fc-row .val{color:rgba(255,255,255,.85);font-weight:500;}
+.fc-note{
+  margin-top:.9rem;padding:.5rem .8rem;
+  background:rgba(10,173,160,.1);border-left:2px solid var(--teal);
+  font-size:.78rem;color:rgba(255,255,255,.6);border-radius:0 6px 6px 0;line-height:1.6;
+}
+
+/* Transfer steps */
+.transfer-section{margin-top:2.5rem;}
+.ts-title{
+  font-family:'Noto Serif TC',serif;font-size:1.3rem;font-weight:700;
+  color:var(--white);margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem;
+}
+.step-list{display:flex;flex-direction:column;gap:1.2rem;}
+.step-item{display:flex;gap:1.2rem;align-items:flex-start;}
+.step-num{
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,var(--teal),var(--ocean));
+  color:var(--white);font-size:.85rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-family:'Cormorant Garamond',serif;font-size:1rem;
+}
+.step-body{flex:1;}
+.step-ttl{font-weight:700;color:var(--white);font-size:.95rem;margin-bottom:.3rem;
+  font-family:'Noto Serif TC',serif;}
+.step-txt{font-size:.86rem;color:rgba(255,255,255,.65);line-height:1.75;}
+.step-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem;}
+.sch{
+  padding:.22rem .7rem;border-radius:20px;font-size:.73rem;font-weight:500;
+}
+.sch.teal{background:rgba(10,173,160,.2);color:var(--aqua);border:1px solid rgba(10,173,160,.3);}
+.sch.amber{background:rgba(232,168,32,.15);color:var(--amber);border:1px solid rgba(232,168,32,.25);}
+.sch.red{background:rgba(217,85,59,.15);color:#F08070;border:1px solid rgba(217,85,59,.25);}
+
+/* Compare table */
+.compare-table{
+  width:100%;border-collapse:separate;border-spacing:0;
+  background:rgba(255,255,255,.04);border-radius:16px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);margin-top:2rem;
+}
+.compare-table th{
+  background:rgba(10,173,160,.2);color:var(--aqua);
+  padding:.9rem 1.2rem;font-size:.82rem;font-weight:600;
+  text-align:left;letter-spacing:.06em;
+}
+.compare-table td{
+  padding:.85rem 1.2rem;font-size:.84rem;color:rgba(255,255,255,.72);
+  border-top:1px solid rgba(255,255,255,.06);
+  line-height:1.6;
+}
+.compare-table tr:hover td{background:rgba(255,255,255,.03);}
+.compare-table td:first-child{color:var(--white);font-weight:600;font-family:'Noto Serif TC',serif;}
+.badge-best{
+  display:inline-block;background:var(--teal);color:var(--white);
+  padding:.1rem .55rem;border-radius:20px;font-size:.68rem;font-weight:700;
+  margin-left:.4rem;vertical-align:middle;
+}
+.badge-cheap{
+  display:inline-block;background:var(--gold);color:var(--white);
+  padding:.1rem .55rem;border-radius:20px;font-size:.68rem;font-weight:700;
+  margin-left:.4rem;vertical-align:middle;
+}
+
+/* Checklist */
+.checklist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem;margin-top:2rem;}
+.cl-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+  border-radius:14px;padding:1.4rem;
+}
+.cl-ttl{font-size:.92rem;font-weight:700;color:var(--amber);
+  font-family:'Noto Serif TC',serif;margin-bottom:.8rem;
+  display:flex;align-items:center;gap:.4rem;}
+.cl-items{display:flex;flex-direction:column;gap:.4rem;}
+.cl-item{
+  display:flex;align-items:center;gap:.6rem;
+  font-size:.83rem;color:rgba(255,255,255,.7);
+}
+.cl-box{
+  width:16px;height:16px;border-radius:4px;
+  border:1.5px solid rgba(10,173,160,.5);flex-shrink:0;
+  background:rgba(10,173,160,.08);
+}
+
+/* ==============================
+   SNACK GRID
+============================== */
+.snack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem;}
+.snack-card{
+  background:var(--white);border-radius:14px;padding:1.2rem;
+  display:flex;align-items:flex-start;gap:1rem;
+  border:1px solid rgba(11,110,138,.07);
+  box-shadow:0 2px 12px rgba(11,110,138,.05);
+  transition:transform .3s,box-shadow .3s;
+}
+.snack-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(11,110,138,.1);}
+.snack-emoji{font-size:2.2rem;flex-shrink:0;line-height:1;}
+.snack-name{font-family:'Noto Serif TC',serif;font-size:.98rem;font-weight:700;color:var(--deep);margin-bottom:.2rem;}
+.snack-where{font-size:.68rem;color:var(--teal);margin-bottom:.4rem;letter-spacing:.05em;}
+.snack-desc{font-size:.8rem;color:#667;line-height:1.7;margin-bottom:.5rem;}
+.snack-price{
+  font-size:.78rem;font-weight:700;color:var(--coral);
+  background:rgba(217,85,59,.07);border:1px solid rgba(217,85,59,.18);
+  display:inline-block;padding:.18rem .6rem;border-radius:6px;
+}
+
+/* ==============================
+   BUDGET CHAPTER
+============================== */
+.budget-wrap{background:linear-gradient(160deg,#F7EFE0,#F0E5CC);padding:5.5rem 1.5rem;}
+.budget-tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.5rem;}
+.budget-tab{
+  padding:.5rem 1.2rem;border-radius:30px;font-size:.8rem;
+  border:1.5px solid rgba(201,146,26,.3);color:var(--gold);
+  cursor:pointer;background:transparent;font-family:'Noto Sans TC',sans-serif;
+  transition:all .25s;font-weight:600;
+}
+.budget-tab:hover,.budget-tab.active{background:var(--gold);color:var(--white);border-color:var(--gold);}
+.budget-panel{display:none;}
+.budget-panel.visible{display:block;}
+
+.budget-summary{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem;
+  margin-bottom:2.5rem;
+}
+.bs-card{
+  background:var(--white);border-radius:14px;padding:1.4rem 1rem;
+  text-align:center;box-shadow:0 2px 12px rgba(0,61,82,.07);
+  border:1px solid rgba(201,146,26,.12);
+}
+.bs-icon{font-size:1.8rem;display:block;margin-bottom:.5rem;}
+.bs-label{font-size:.7rem;color:#889;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem;}
+.bs-val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--deep);}
+.bs-sub{font-size:.72rem;color:#aaa;margin-top:.15rem;}
+
+.budget-table-wrap{overflow-x:auto;border-radius:16px;margin-bottom:2rem;}
+.budget-table{
+  width:100%;border-collapse:separate;border-spacing:0;
+  background:var(--white);border-radius:16px;overflow:hidden;
+  border:1px solid rgba(201,146,26,.15);
+}
+.budget-table th{
+  background:linear-gradient(90deg,var(--gold),var(--amber));
+  color:var(--white);padding:.85rem 1.2rem;font-size:.82rem;
+  font-weight:700;text-align:left;letter-spacing:.05em;
+}
+.budget-table td{
+  padding:.8rem 1.2rem;font-size:.84rem;color:#445;
+  border-top:1px solid rgba(201,146,26,.08);line-height:1.6;
+}
+.budget-table tr:hover td{background:rgba(201,146,26,.03);}
+.budget-table td:first-child{color:var(--deep);font-weight:600;font-family:'Noto Serif TC',serif;}
+.budget-table td.nt{color:var(--coral);font-weight:700;}
+.budget-table td.note{color:#889;font-size:.78rem;}
+.budget-table tr.total td{
+  background:rgba(201,146,26,.06);font-weight:700;
+  border-top:2px solid var(--gold);
+}
+.budget-table tr.total td.nt{color:var(--coral);font-size:1rem;}
+
+.budget-bar-row{display:flex;flex-direction:column;gap:.8rem;margin-top:1.5rem;}
+.bar-item{}
+.bar-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:.3rem;font-size:.84rem;}
+.bar-name{color:var(--deep);font-weight:600;}
+.bar-val{color:var(--coral);font-weight:700;font-family:'Cormorant Garamond',serif;font-size:1rem;}
+.bar-track{background:rgba(0,0,0,.06);border-radius:20px;height:10px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,var(--teal),var(--ocean));}
+
+.saving-tips{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:1rem;margin-top:2rem;
+}
+.saving-tip{
+  background:var(--white);border-radius:12px;padding:1.2rem;
+  border-left:3px solid var(--teal);
+  box-shadow:0 2px 10px rgba(11,110,138,.06);
+}
+.saving-tip .st-ttl{font-weight:700;color:var(--deep);font-size:.9rem;margin-bottom:.4rem;
+  display:flex;align-items:center;gap:.4rem;}
+.saving-tip p{font-size:.82rem;color:#667;line-height:1.7;}
+
+/* ==============================
+   FOOTER
+============================== */
+footer{background:var(--ink);color:rgba(255,255,255,.4);text-align:center;padding:3.5rem 2rem;font-size:.85rem;line-height:2.2;}
+footer strong{color:var(--amber);}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--white);font-weight:700;margin-bottom:.5rem;display:block;}
+
+/* ==============================
+   ANIMATIONS
+============================== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-up.in-view{opacity:1;transform:translateY(0);}
+
+/* ==============================
+   MISC UTILS
+============================== */
+.tag-row{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem;}
+</style>
+</head>
+<body>
+
+<!-- ================================
+     HERO
+================================ -->
+<section class="hero" id="top">
+  <!-- stars -->
+  <div class="hero-stars" id="stars"></div>
+  <!-- animated waves -->
+  <div class="hero-waves">
+    <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 60C180 100 360 20 540 60S900 100 1080 60 1260 20 1440 60V120H0Z" fill="#0AADA0"/>
+    </svg>
+    <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 80C200 40 400 100 600 60S900 20 1100 80 1300 100 1440 50V120H0Z" fill="#38CEC5"/>
+    </svg>
+    <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 50C300 90 600 10 900 50S1200 90 1440 30V120H0Z" fill="#0B6E8A"/>
+    </svg>
+  </div>
+
+  <div class="hero-tag">✈ 台灣出發 · 10日環島深度遊</div>
+
+  <h1 class="hero-title">
+    海南島<br><em>環島高鐵遊</em>
+  </h1>
+  <p class="hero-sub">中國唯一環島高鐵 · 碧海藍天 · 熱帶風情</p>
+
+  <div class="hero-chips">
+    <div class="hero-chip"><span class="ci">🛫</span><span class="cl">出發地</span><span class="cv">台灣</span></div>
+    <div class="hero-chip"><span class="ci">🏝️</span><span class="cl">目的地</span><span class="cv">海口</span></div>
+    <div class="hero-chip"><span class="ci">🚄</span><span class="cl">環島高鐵</span><span class="cv">東西環線</span></div>
+    <div class="hero-chip"><span class="ci">📅</span><span class="cl">建議天數</span><span class="cv">10 天</span></div>
+    <div class="hero-chip"><span class="ci">🏖️</span><span class="cl">主要站點</span><span class="cv">8 站</span></div>
+    <div class="hero-chip"><span class="ci">👨‍👩‍👧</span><span class="cl">適合</span><span class="cv">親子家庭</span></div>
+  </div>
+
+  <div class="scroll-hint">
+    向下捲動
+    <div class="scroll-arrow"></div>
+  </div>
+
+  <div class="hero-wave-bottom">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 30C360 60 720 0 1080 30S1260 60 1440 20V60H0Z" fill="#FAF6EE"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ================================
+     STICKY NAV
+================================ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">🏝 海南環島</div>
+    <a class="nav-link" href="#ch0">✈️ 出發攻略</a>
+    <a class="nav-link" href="#ch1">🏨 住宿</a>
+    <a class="nav-link" href="#ch2">🚄 行程規劃</a>
+    <a class="nav-link" href="#ch3">🌊 景點</a>
+    <a class="nav-link" href="#ch4">🍜 美食</a>
+    <a class="nav-link" href="#ch5">⚠️ 行前叮嚀</a>
+    <a class="nav-link" href="#ch6">🎁 伴手禮</a>
+    <a class="nav-link" href="#budget">💰 預算規劃</a>
+  </div>
+</nav>
+
+<!-- RIBBON -->
+<div class="ribbon">
+  <p>🚄 東環線：<span>海口 → 文昌 → 瓊海 → 萬寧 → 陵水 → 三亞</span>&ensp;｜&ensp;西環線：<span>三亞 → 東方 → 儋州 → 海口</span></p>
+</div>
+
+
+<!-- ================================
+     CH0 台灣出發交通攻略
+================================ -->
+<section id="ch0">
+<div class="depart-hero">
+<div class="ch-inner">
+
+  <div class="ch-head">
+    <div class="ch-num" style="color:rgba(255,255,255,.05);">00</div>
+    <div class="ch-meta">
+      <span class="tag">序章</span>
+      <h2 style="color:var(--white);">從台灣出發<br>抵達海南全攻略</h2>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <p class="lead-light">從訂機票、辦證件、準備支付工具，到落地後轉乘高鐵，每一步都幫您規劃清楚，讓旅程從台灣家門口開始就順暢無憂。</p>
+
+  <!-- Route Visual -->
+  <div class="route-visual">
+    <div class="rv-city">
+      <div class="rv-circle highlight">🏠</div>
+      <div class="rv-label">台灣</div>
+      <div class="rv-sub">桃園/高雄</div>
+    </div>
+    <div class="rv-arrow">
+      <div class="rv-info">✈ 直航 1.5–2h</div>
+      <div class="rv-line"></div>
+    </div>
+    <div class="rv-city">
+      <div class="rv-circle">🛬</div>
+      <div class="rv-label">海口</div>
+      <div class="rv-sub">美蘭機場 HAK</div>
+    </div>
+    <div class="rv-arrow">
+      <div class="rv-info">🚇 地鐵 40min</div>
+      <div class="rv-line"></div>
+    </div>
+    <div class="rv-city">
+      <div class="rv-circle">🏙️</div>
+      <div class="rv-label">海口市區</div>
+      <div class="rv-sub">海口東站</div>
+    </div>
+    <div class="rv-arrow">
+      <div class="rv-info">🚄 東環高鐵</div>
+      <div class="rv-line"></div>
+    </div>
+    <div class="rv-city">
+      <div class="rv-circle end">🏝️</div>
+      <div class="rv-label">各高鐵站</div>
+      <div class="rv-sub">文昌→三亞</div>
+    </div>
+  </div>
+
+  <!-- BLOCK 1: 航班選擇 -->
+  <div class="ts-title">✈️ 第一步：航班選擇</div>
+  <div class="flight-grid">
+
+    <div class="flight-card">
+      <div class="fc-airline">
+        <div class="fc-logo" style="background:rgba(0,90,160,.3);">🔵</div>
+        <div>
+          <div class="fc-name">廈門航空 MF</div>
+          <div class="fc-code">Xiamen Airlines · 國際航班</div>
+        </div>
+      </div>
+      <div class="fc-route">
+        <div class="fc-port"><div class="fc-iata">TPE</div><div class="fc-city-name">桃園機場</div></div>
+        <div class="fc-mid"><div class="fc-duration">約 1h 45m</div><div class="fc-plane">✈</div><div class="fc-dash"></div></div>
+        <div class="fc-port"><div class="fc-iata">HAK</div><div class="fc-city-name">海口美蘭</div></div>
+      </div>
+      <div class="fc-details">
+        <div class="fc-row"><span class="lbl">班次頻率</span><span class="val">每日 1–2 班</span></div>
+        <div class="fc-row"><span class="lbl">票價參考</span><span class="val">NT$3,500–8,000</span></div>
+        <div class="fc-row"><span class="lbl">行李額度</span><span class="val">免費托運 23kg</span></div>
+      </div>
+      <div class="fc-note">📌 廈門轉機也可，行程可順遊廈門1日，機票彈性更高</div>
+    </div>
+
+    <div class="flight-card">
+      <div class="fc-airline">
+        <div class="fc-logo" style="background:rgba(0,160,90,.3);">🟢</div>
+        <div>
+          <div class="fc-name">海南航空 HU</div>
+          <div class="fc-code">Hainan Airlines · 中資航空</div>
+        </div>
+      </div>
+      <div class="fc-route">
+        <div class="fc-port"><div class="fc-iata">TPE</div><div class="fc-city-name">桃園機場</div></div>
+        <div class="fc-mid"><div class="fc-duration">約 1h 50m</div><div class="fc-plane">✈</div><div class="fc-dash"></div></div>
+        <div class="fc-port"><div class="fc-iata">HAK</div><div class="fc-city-name">海口美蘭</div></div>
+      </div>
+      <div class="fc-details">
+        <div class="fc-row"><span class="lbl">班次頻率</span><span class="val">每週 3–5 班</span></div>
+        <div class="fc-row"><span class="lbl">票價參考</span><span class="val">NT$3,000–7,500</span></div>
+        <div class="fc-row"><span class="lbl">行李額度</span><span class="val">免費托運 23kg</span></div>
+      </div>
+      <div class="fc-note">📌 海南航空為海口本地航空，直航最省時，服務口碑佳</div>
+    </div>
+
+    <div class="flight-card">
+      <div class="fc-airline">
+        <div class="fc-logo" style="background:rgba(160,30,30,.3);">🔴</div>
+        <div>
+          <div class="fc-name">中華航空 CI</div>
+          <div class="fc-code">China Airlines · 台灣籍航空</div>
+        </div>
+      </div>
+      <div class="fc-route">
+        <div class="fc-port"><div class="fc-iata">TPE</div><div class="fc-city-name">桃園機場</div></div>
+        <div class="fc-mid"><div class="fc-duration">約 2h 10m</div><div class="fc-plane">✈</div><div class="fc-dash"></div></div>
+        <div class="fc-port"><div class="fc-iata">HAK</div><div class="fc-city-name">海口美蘭</div></div>
+      </div>
+      <div class="fc-details">
+        <div class="fc-row"><span class="lbl">班次頻率</span><span class="val">每週 2–4 班</span></div>
+        <div class="fc-row"><span class="lbl">票價參考</span><span class="val">NT$4,000–9,500</span></div>
+        <div class="fc-row"><span class="lbl">行李額度</span><span class="val">免費托運 23kg</span></div>
+      </div>
+      <div class="fc-note">📌 台灣籍航空，售後服務更熟悉，適合首次前往中國的旅客</div>
+    </div>
+
+    <div class="flight-card">
+      <div class="fc-airline">
+        <div class="fc-logo" style="background:rgba(200,140,0,.25);">🟡</div>
+        <div>
+          <div class="fc-name">高雄出發選項 KHH</div>
+          <div class="fc-code">南台灣旅客更方便</div>
+        </div>
+      </div>
+      <div class="fc-route">
+        <div class="fc-port"><div class="fc-iata">KHH</div><div class="fc-city-name">高雄小港</div></div>
+        <div class="fc-mid"><div class="fc-duration">約 1h 40m</div><div class="fc-plane">✈</div><div class="fc-dash"></div></div>
+        <div class="fc-port"><div class="fc-iata">HAK</div><div class="fc-city-name">海口美蘭</div></div>
+      </div>
+      <div class="fc-details">
+        <div class="fc-row"><span class="lbl">營運航空</span><span class="val">廈門航空 / 海南航空</span></div>
+        <div class="fc-row"><span class="lbl">班次頻率</span><span class="val">每週 2–3 班</span></div>
+        <div class="fc-row"><span class="lbl">票價參考</span><span class="val">NT$2,800–7,000</span></div>
+      </div>
+      <div class="fc-note">📌 南台灣旅客建議選擇，省去北上搭機時間與費用</div>
+    </div>
+
+    <div class="flight-card">
+      <div class="fc-airline">
+        <div class="fc-logo" style="background:rgba(10,100,160,.3);">🌊</div>
+        <div>
+          <div class="fc-name">台北→三亞直航 SYX</div>
+          <div class="fc-code">抵達三亞鳳凰機場反向玩法</div>
+        </div>
+      </div>
+      <div class="fc-route">
+        <div class="fc-port"><div class="fc-iata">TPE</div><div class="fc-city-name">桃園機場</div></div>
+        <div class="fc-mid"><div class="fc-duration">約 2h 00m</div><div class="fc-plane">✈</div><div class="fc-dash"></div></div>
+        <div class="fc-port"><div class="fc-iata">SYX</div><div class="fc-city-name">三亞鳳凰</div></div>
+      </div>
+      <div class="fc-details">
+        <div class="fc-row"><span class="lbl">班次頻率</span><span class="val">每週 3–5 班</span></div>
+        <div class="fc-row"><span class="lbl">票價參考</span><span class="val">NT$3,200–8,500</span></div>
+        <div class="fc-row"><span class="lbl">行程建議</span><span class="val">逆時針環島</span></div>
+      </div>
+      <div class="fc-note">📌 由三亞入、海口出的逆向環島玩法，先享受最美海灘！</div>
+    </div>
+
+    <div class="flight-card">
+      <div class="fc-airline">
+        <div class="fc-logo" style="background:rgba(80,60,160,.3);">💜</div>
+        <div>
+          <div class="fc-name">香港中轉銜接</div>
+          <div class="fc-code">HKG 轉機方案</div>
+        </div>
+      </div>
+      <div class="fc-route">
+        <div class="fc-port"><div class="fc-iata">TPE</div><div class="fc-city-name">桃園機場</div></div>
+        <div class="fc-mid"><div class="fc-duration">轉 HKG</div><div class="fc-plane">✈✈</div><div class="fc-dash"></div></div>
+        <div class="fc-port"><div class="fc-iata">HAK</div><div class="fc-city-name">海口美蘭</div></div>
+      </div>
+      <div class="fc-details">
+        <div class="fc-row"><span class="lbl">總飛行時間</span><span class="val">約 4–5 小時</span></div>
+        <div class="fc-row"><span class="lbl">票價參考</span><span class="val">NT$2,500–6,000</span></div>
+        <div class="fc-row"><span class="lbl">航空選擇</span><span class="val">港龍、國泰、南航</span></div>
+      </div>
+      <div class="fc-note">📌 票價有時較優惠，可順遊香港1–2日，彈性最高</div>
+    </div>
+
+  </div><!-- /flight-grid -->
+
+  <!-- 比較表 -->
+  <div class="ts-title">📊 出發方式比較一覽</div>
+  <div style="overflow-x:auto;border-radius:16px;">
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>出發方式</th>
+        <th>飛行時間</th>
+        <th>票價範圍</th>
+        <th>訂票建議</th>
+        <th>適合對象</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>桃園→海口直航<span class="badge-best">推薦</span></td>
+        <td>約 1h 45m</td>
+        <td>NT$3,500–8,000</td>
+        <td>提前 2–3 個月訂票最優惠</td>
+        <td>北部旅客、首次前往</td>
+      </tr>
+      <tr>
+        <td>高雄→海口直航<span class="badge-best">推薦</span></td>
+        <td>約 1h 40m</td>
+        <td>NT$2,800–7,000</td>
+        <td>南部旅客省時首選</td>
+        <td>南部旅客、親子家庭</td>
+      </tr>
+      <tr>
+        <td>桃園→三亞直航</td>
+        <td>約 2h 00m</td>
+        <td>NT$3,200–8,500</td>
+        <td>逆向環島（南→北）</td>
+        <td>想先玩三亞的旅客</td>
+      </tr>
+      <tr>
+        <td>香港中轉<span class="badge-cheap">省錢</span></td>
+        <td>約 4–5h</td>
+        <td>NT$2,500–6,000</td>
+        <td>可加遊香港，提早訂</td>
+        <td>預算有限、兼遊香港</td>
+      </tr>
+      <tr>
+        <td>廣州/深圳中轉</td>
+        <td>約 5–6h</td>
+        <td>NT$2,200–5,500</td>
+        <td>機票最便宜，但耗時</td>
+        <td>背包客、預算旅行</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- BLOCK 2: 入境流程 -->
+  <div class="transfer-section">
+    <div class="ts-title" style="margin-top:3rem;">🛬 第二步：抵達海口·入境流程</div>
+    <div class="step-list">
+
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-ttl">下機後—填寫入境申報單</div>
+          <div class="step-txt">在機上或廊橋取得「中華人民共和國入境旅客行李申報單」，提前填寫姓名、護照號碼、入境目的（旅遊）、攜帶物品。若無超額物品全部勾「否」即可，無需填寫海南免稅購物金額（返台時再申報）。</div>
+          <div class="step-chips"><span class="sch teal">📋 機上索取申報單</span><span class="sch amber">✍️ 提前填好省時間</span></div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-ttl">入境審查—海南自由貿易港免簽通道</div>
+          <div class="step-txt">持台灣護照（中華民國護照）至「外籍旅客通道」排隊。向海關出示護照，告知「旅遊」目的，填寫停留天數與入住飯店地址。依據最新政策，台灣旅客可享<strong style="color:var(--aqua);">海南自由貿易港旅遊免簽30天</strong>，無需事先辦理任何入境許可。審查時間通常5–10分鐘。</div>
+          <div class="step-chips"><span class="sch teal">🇹🇼 持台灣護照免簽30天</span><span class="sch amber">🏨 需填飯店地址</span><span class="sch red">⚠️ 若離島則需台胞證</span></div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-ttl">提取行李—入境大廳辦理</div>
+          <div class="step-txt">依據班機號碼在轉盤提取行李，完成後通過「申報通道（紅色通道）」或「免申報通道（綠色通道）」。一般旅客走綠色通道，海關人員可能隨機抽查護照，配合即可。</div>
+          <div class="step-chips"><span class="sch teal">🧳 走綠色通道</span><span class="sch amber">✅ 保持禮貌配合</span></div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-ttl">機場大廳—立即辦理的事項</div>
+          <div class="step-txt">走出入境大廳後建議依序完成：<strong style="color:var(--white);">①</strong> 購買/啟用中國漫遊SIM卡（機場各電信窗口），<strong style="color:var(--white);">②</strong> 領取或兌換人民幣（機場設有銀行與ATM），<strong style="color:var(--white);">③</strong> 設定支付寶或微信支付境外信用卡綁定（需WiFi環境，機場有免費WiFi），<strong style="color:var(--white);">④</strong> 下載高德地圖、滴滴出行，完成後即可自在出行。</div>
+          <div class="step-chips">
+            <span class="sch teal">📱 辦SIM卡</span>
+            <span class="sch amber">💰 換人民幣</span>
+            <span class="sch teal">📲 設定支付寶</span>
+            <span class="sch amber">🗺 下載高德地圖</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BLOCK 3: 機場→市區交通 -->
+  <div class="transfer-section">
+    <div class="ts-title" style="margin-top:3rem;">🚇 第三步：機場→海口市區→高鐵站</div>
+    <div class="step-list">
+
+      <div class="step-item">
+        <div class="step-num">A</div>
+        <div class="step-body">
+          <div class="step-ttl">🚇 地鐵1號線（最推薦）</div>
+          <div class="step-txt">美蘭機場站 → 海口東站，直達無須換乘。票價 ¥6，車程約 40 分鐘，班次密集約每10分鐘一班，行李可放置於車廂特設行李架，親子家庭最適合。購票方式：自動售票機（接受人民幣現金/銀行卡）或手機掃碼乘車。</div>
+          <div class="step-chips">
+            <span class="sch teal">💰 ¥6 最省錢</span>
+            <span class="sch teal">⏱ 40分鐘</span>
+            <span class="sch amber">🎒 大行李可上車</span>
+            <span class="sch teal">🔄 直達海口東站</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">B</div>
+        <div class="step-body">
+          <div class="step-ttl">🚌 機場快線巴士</div>
+          <div class="step-txt">機場航站樓外設多條快線巴士，分別前往海口東站、市區各大飯店、汽車南站等地。票價 ¥20，車程視路線約 30–50 分鐘。適合前往非地鐵沿線飯店的旅客，攜帶超大行李組合箱亦方便上下車。</div>
+          <div class="step-chips">
+            <span class="sch amber">💰 ¥20</span>
+            <span class="sch teal">⏱ 30–50分鐘</span>
+            <span class="sch amber">🚌 多條路線</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">C</div>
+        <div class="step-body">
+          <div class="step-ttl">🚕 滴滴出行（類Uber叫車）</div>
+          <div class="step-txt">機場大廳設有滴滴指定上客區，App叫車後司機會導航前往。費用約 ¥60–90，車程約 35–45 分鐘，可選快車（舒適）或拼車（更省）。適合大家庭或行李多者，費用雖高但最便捷。注意：請勿在指定區域以外攔車，以免遇上黑車糾紛。</div>
+          <div class="step-chips">
+            <span class="sch red">💰 ¥60–90</span>
+            <span class="sch teal">⏱ 35–45分鐘</span>
+            <span class="sch amber">👨‍👩‍👧 適合家庭</span>
+            <span class="sch red">⚠️ 認清指定區域</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">D</div>
+        <div class="step-body">
+          <div class="step-ttl">🚄 抵達海口東站·啟動高鐵旅程</div>
+          <div class="step-txt">抵達海口東站後，前往車站內購買環島高鐵車票（可使用「12306」APP事先預訂，需綁定護照號碼購買），或至人工售票窗口購買當日票。外籍旅客購票需出示護照正本，窗口工作人員熟悉此流程，無需擔心語言問題。領取紙質車票後憑票進站，正式開始環島之旅！</div>
+          <div class="step-chips">
+            <span class="sch teal">📱 12306 APP預購</span>
+            <span class="sch amber">🪪 持護照購票</span>
+            <span class="sch teal">🚄 東環高鐵出發</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BLOCK 4: 行前準備清單 -->
+  <div class="ts-title" style="margin-top:3rem;">✅ 出發前準備清單</div>
+  <div class="checklist-grid">
+
+    <div class="cl-card">
+      <div class="cl-ttl">📋 證件準備（出發前1個月）</div>
+      <div class="cl-items">
+        <div class="cl-item"><div class="cl-box"></div>確認護照效期超過 6 個月</div>
+        <div class="cl-item"><div class="cl-box"></div>拍攝護照電子備份存雲端</div>
+        <div class="cl-item"><div class="cl-box"></div>確認無需辦理台胞證（30天內免簽）</div>
+        <div class="cl-item"><div class="cl-box"></div>備妥2吋照片×2張（備用）</div>
+        <div class="cl-item"><div class="cl-box"></div>準備緊急聯絡卡（飯店地址中英文）</div>
+      </div>
+    </div>
+
+    <div class="cl-card">
+      <div class="cl-ttl">✈️ 訂票（出發前2–3個月）</div>
+      <div class="cl-items">
+        <div class="cl-item"><div class="cl-box"></div>比較各航空公司票價（Trip.com/Skyscanner）</div>
+        <div class="cl-item"><div class="cl-box"></div>訂購機票並確認行李額度</div>
+        <div class="cl-item"><div class="cl-box"></div>購買旅遊保險（含醫療+取消）</div>
+        <div class="cl-item"><div class="cl-box"></div>預訂各站飯店（高鐵站旁優先）</div>
+        <div class="cl-item"><div class="cl-box"></div>12306 APP 以護照號碼登錄購高鐵票</div>
+      </div>
+    </div>
+
+    <div class="cl-card">
+      <div class="cl-ttl">📱 數位工具（出發前1週）</div>
+      <div class="cl-items">
+        <div class="cl-item"><div class="cl-box"></div>安裝並測試 VPN（在台灣境內操作）</div>
+        <div class="cl-item"><div class="cl-box"></div>下載支付寶並綁定境外信用卡</div>
+        <div class="cl-item"><div class="cl-box"></div>下載高德地圖、百度翻譯（含離線）</div>
+        <div class="cl-item"><div class="cl-box"></div>下載滴滴出行並設定帳號</div>
+        <div class="cl-item"><div class="cl-box"></div>準備或預購中國漫遊 SIM 卡</div>
+      </div>
+    </div>
+
+    <div class="cl-card">
+      <div class="cl-ttl">💰 金錢準備（出發前1週）</div>
+      <div class="cl-items">
+        <div class="cl-item"><div class="cl-box"></div>換取人民幣 ¥3,000–5,000 現金備用</div>
+        <div class="cl-item"><div class="cl-box"></div>確認信用卡開通海外刷卡功能</div>
+        <div class="cl-item"><div class="cl-box"></div>告知銀行旅遊日期避免卡片被鎖</div>
+        <div class="cl-item"><div class="cl-box"></div>設定微信支付（WeChat Pay）境外版</div>
+        <div class="cl-item"><div class="cl-box"></div>準備少量台幣備用（返台需要）</div>
+      </div>
+    </div>
+
+    <div class="cl-card">
+      <div class="cl-ttl">🧳 行李打包（出發前2–3天）</div>
+      <div class="cl-items">
+        <div class="cl-item"><div class="cl-box"></div>防曬乳 SPF50+（足量，海南陽光強烈）</div>
+        <div class="cl-item"><div class="cl-box"></div>防曬外套、遮陽帽、太陽眼鏡</div>
+        <div class="cl-item"><div class="cl-box"></div>沙灘水鞋（礁石多，必備）</div>
+        <div class="cl-item"><div class="cl-box"></div>防蚊液（雨季蚊蟲多）</div>
+        <div class="cl-item"><div class="cl-box"></div>常備藥品（腸胃藥、退燒、抗組織胺）</div>
+      </div>
+    </div>
+
+    <div class="cl-card">
+      <div class="cl-ttl">📅 出發當天確認</div>
+      <div class="cl-items">
+        <div class="cl-item"><div class="cl-box"></div>提前 3 小時抵達機場辦理登機</div>
+        <div class="cl-item"><div class="cl-box"></div>隨身攜帶護照（全程貼身保管）</div>
+        <div class="cl-item"><div class="cl-box"></div>手機充電至100%（入境需填資料）</div>
+        <div class="cl-item"><div class="cl-box"></div>確認飯店地址（入境審查會詢問）</div>
+        <div class="cl-item"><div class="cl-box"></div>確認人民幣備在隨身包（非托運行李）</div>
+      </div>
+    </div>
+
+  </div><!-- /checklist-grid -->
+
+</div>
+</div>
+</section>
+
+
+<!-- ================================
+     CH1 住宿建議
+================================ -->
+<section id="ch1">
+<div class="ch-wrap">
+<div class="ch-inner">
+  <div class="ch-head">
+    <div class="ch-num">01</div>
+    <div class="ch-meta">
+      <span class="tag">Chapter 1</span>
+      <h2>住宿建議<br>高鐵站旁精選旅宿</h2>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <p class="lead">精選沿線各站平價三星連鎖品牌旅館，站旁步行可達，乾淨舒適、CP值極高，讓預算花在刀口上。每晚參考價格以雙人房為主（台幣 NT$ 換算以 1:4.5 計）。</p>
+
+  <!-- 品牌說明列 -->
+  <div style="display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:2rem;">
+    <div style="background:rgba(10,173,160,.1);border:1px solid rgba(10,173,160,.25);border-radius:10px;padding:.5rem 1rem;font-size:.82rem;color:var(--teal);font-weight:600;">🏨 漢庭酒店 Hanting</div>
+    <div style="background:rgba(201,146,26,.1);border:1px solid rgba(201,146,26,.25);border-radius:10px;padding:.5rem 1rem;font-size:.82rem;color:var(--gold);font-weight:600;">🛏 如家快捷 Home Inn</div>
+    <div style="background:rgba(11,110,138,.1);border:1px solid rgba(11,110,138,.25);border-radius:10px;padding:.5rem 1rem;font-size:.82rem;color:var(--ocean);font-weight:600;">🌙 全季酒店 Ji Hotel</div>
+    <div style="background:rgba(43,104,64,.1);border:1px solid rgba(43,104,64,.25);border-radius:10px;padding:.5rem 1rem;font-size:.82rem;color:var(--palm);font-weight:600;">🌿 尚客優 Thank Inn</div>
+    <div style="background:rgba(217,85,59,.1);border:1px solid rgba(217,85,59,.25);border-radius:10px;padding:.5rem 1rem;font-size:.82rem;color:var(--coral);font-weight:600;">🏖 7天連鎖 7 Days Inn</div>
+  </div>
+
+  <div class="hotel-grid">
+
+    <!-- 海口 -->
+    <div class="hotel-card">
+      <div class="hc-top" data-emoji="🏙" style="background:linear-gradient(135deg,#0A3040,#1A5A70);">
+        <div class="hc-city">起點城市 · 海口</div>
+        <div class="hc-name">漢庭酒店 海口東站店</div>
+        <div class="hc-stars">★★★</div>
+        <div class="hc-station">🚄 海口東站步行 5 分鐘</div>
+      </div>
+      <div class="hc-body">
+        <div class="hc-feat">站前黃金地段，出站即到</div>
+        <div class="hc-feat">客房乾淨整潔，WiFi穩定</div>
+        <div class="hc-feat">含早餐，近騎樓老街步行15分</div>
+        <div class="hc-pills">
+          <span class="pill">三星</span><span class="pill gold">NT$650–950/晚</span><span class="pill">連鎖品質保障</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 海口2 -->
+    <div class="hotel-card">
+      <div class="hc-top" data-emoji="🌃" style="background:linear-gradient(135deg,#1A3A50,#0B5A78);">
+        <div class="hc-city">海口市區備選</div>
+        <div class="hc-name">全季酒店 海口海甸島店</div>
+        <div class="hc-stars">★★★</div>
+        <div class="hc-station">🚇 地鐵海甸島站步行 3 分鐘</div>
+      </div>
+      <div class="hc-body">
+        <div class="hc-feat">全季品牌設計感強，房間明亮</div>
+        <div class="hc-feat">近海甸島海鮮市場，晚餐方便</div>
+        <div class="hc-feat">含早餐，設健身房</div>
+        <div class="hc-pills">
+          <span class="pill">三星</span><span class="pill gold">NT$800–1,200/晚</span><span class="pill">設計風格</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 文昌 -->
+    <div class="hotel-card">
+      <div class="hc-top" data-emoji="🚀" style="background:linear-gradient(135deg,#1B4030,#2B6040);">
+        <div class="hc-city">文昌</div>
+        <div class="hc-name">如家快捷 文昌站店</div>
+        <div class="hc-stars">★★★</div>
+        <div class="hc-station">🚄 文昌站步行 6 分鐘</div>
+      </div>
+      <div class="hc-body">
+        <div class="hc-feat">高鐵站旁最近連鎖選擇</div>
+        <div class="hc-feat">標準雙床房，適合親子入住</div>
+        <div class="hc-feat">含早餐，設自助洗衣</div>
+        <div class="hc-pills">
+          <span class="pill">三星</span><span class="pill gold">NT$550–800/晚</span><span class="pill">文昌最實惠</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 瓊海 -->
+    <div class="hotel-card">
+      <div class="hc-top" data-emoji="🌊" style="background:linear-gradient(135deg,#253A1A,#3A6028);">
+        <div class="hc-city">瓊海 · 博鰲</div>
+        <div class="hc-name">漢庭酒店 博鰲景區店</div>
+        <div class="hc-stars">★★★</div>
+        <div class="hc-station">🚄 博鰲站步行 10 分鐘</div>
+      </div>
+      <div class="hc-body">
+        <div class="hc-feat">距博鰲景區最近的連鎖品牌</div>
+        <div class="hc-feat">可眺望萬泉河，房間寬敞</div>
+        <div class="hc-feat">含早餐，停車方便</div>
+        <div class="hc-pills">
+          <span class="pill">三星</span><span class="pill gold">NT$600–900/晚</span><span class="pill">景區直達</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 萬寧 -->
+    <div class="hotel-card">
+      <div class="hc-top" data-emoji="🏄" style="background:linear-gradient(135deg,#3A2010,#6A4020);">
+        <div class="hc-city">萬寧</div>
+        <div class="hc-name">全季酒店 萬寧站店</div>
+        <div class="hc-stars">★★★</div>
+        <div class="hc-station">🚄 萬寧站步行 8 分鐘</div>
+      </div>
+      <div class="hc-body">
+        <div class="hc-feat">全季品牌，環境整潔舒適</div>
+        <div class="hc-feat">站旁最近連鎖，搭景區巴士方便</div>
+        <div class="hc-feat">含早餐，提供行李寄存</div>
+        <div class="hc-pills">
+          <span class="pill">三星</span><span class="pill gold">NT$700–1,000/晚</span><span class="pill">衝浪客首選</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 陵水 -->
+    <div class="hotel-card">
+      <div class="hc-top" data-emoji="🐠" style="background:linear-gradient(135deg,#082838,#0A4A5A);">
+        <div class="hc-city">陵水</div>
+        <div class="hc-name">7天連鎖 陵水高鐵站店</div>
+        <div class="hc-stars">★★★</div>
+        <div class="hc-station">🚄 陵水站步行 3 分鐘</div>
+      </div>
+      <div class="hc-body">
+        <div class="hc-feat">7天品牌，全國標準化管理</div>
+        <div class="hc-feat">距分界洲島碼頭15分鐘車程</div>
+        <div class="hc-feat">含早餐，房型選擇多</div>
+        <div class="hc-pills">
+          <span class="pill">三星</span><span class="pill gold">NT$500–750/晚</span><span class="pill">最省錢選擇</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 三亞 -->
+    <div class="hotel-card">
+      <div class="hc-top" data-emoji="🌅" style="background:linear-gradient(135deg,#3A1020,#6A2035);">
+        <div class="hc-city">三亞 市區</div>
+        <div class="hc-name">漢庭酒店 三亞解放路店</div>
+        <div class="hc-stars">★★★</div>
+        <div class="hc-station">🚄 三亞站巴士 15 分鐘</div>
+      </div>
+      <div class="hc-body">
+        <div class="hc-feat">解放路商圈核心，美食夜市步行可達</div>
+        <div class="hc-feat">搭乘旅遊巴士各景區皆方便</div>
+        <div class="hc-feat">含早餐，房間附空調浴缸</div>
+        <div class="hc-pills">
+          <span class="pill">三星</span><span class="pill gold">NT$850–1,300/晚</span><span class="pill">三亞最划算</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 三亞備選 -->
+    <div class="hotel-card">
+      <div class="hc-top" data-emoji="🏖" style="background:linear-gradient(135deg,#1A2848,#2A4878);">
+        <div class="hc-city">三亞 · 大東海備選</div>
+        <div class="hc-name">尚客優酒店 三亞大東海店</div>
+        <div class="hc-stars">★★★</div>
+        <div class="hc-station">🏖 大東海沙灘步行 10 分鐘</div>
+      </div>
+      <div class="hc-body">
+        <div class="hc-feat">近海灘三星首選，泳池設施完善</div>
+        <div class="hc-feat">部分房型可遠眺南海</div>
+        <div class="hc-feat">含早餐，適合沙灘為主行程</div>
+        <div class="hc-pills">
+          <span class="pill">三星</span><span class="pill gold">NT$1,000–1,600/晚</span><span class="pill">海景加值</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 儋州 -->
+    <div class="hotel-card">
+      <div class="hc-top" data-emoji="🏝" style="background:linear-gradient(135deg,#1A2A3A,#2A4060);">
+        <div class="hc-city">儋州 · 西環線</div>
+        <div class="hc-name">如家快捷 儋州那大站店</div>
+        <div class="hc-stars">★★★</div>
+        <div class="hc-station">🚄 儋州那大站步行 5 分鐘</div>
+      </div>
+      <div class="hc-body">
+        <div class="hc-feat">西環線過夜最實惠選擇</div>
+        <div class="hc-feat">距海花島接駁站10分鐘</div>
+        <div class="hc-feat">含早餐，整體評分穩定</div>
+        <div class="hc-pills">
+          <span class="pill">三星</span><span class="pill gold">NT$500–750/晚</span><span class="pill">西環線首選</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 東方 -->
+    <div class="hotel-card">
+      <div class="hc-top" data-emoji="🌿" style="background:linear-gradient(135deg,#0A2820,#1A4835);">
+        <div class="hc-city">東方 · 西環線</div>
+        <div class="hc-name">7天連鎖 東方高鐵站店</div>
+        <div class="hc-stars">★★★</div>
+        <div class="hc-station">🚄 東方站步行 4 分鐘</div>
+      </div>
+      <div class="hc-body">
+        <div class="hc-feat">全程最省錢過夜站點之一</div>
+        <div class="hc-feat">物價全島最低，周邊餐廳實惠</div>
+        <div class="hc-feat">含早餐，乾淨衛生有保障</div>
+        <div class="hc-pills">
+          <span class="pill">三星</span><span class="pill gold">NT$450–680/晚</span><span class="pill">全程最省</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /hotel-grid -->
+
+  <div style="background:rgba(10,173,160,.06);border:1px solid rgba(10,173,160,.18);border-radius:16px;padding:1.4rem 1.8rem;margin-top:1.5rem;">
+    <p style="font-family:'Noto Serif TC',serif;font-size:.95rem;font-weight:700;color:var(--ocean);margin-bottom:.5rem;">💡 訂房小提醒</p>
+    <p style="font-size:.85rem;color:#556;line-height:1.85;">以上連鎖品牌均可透過 <strong>攜程（Trip.com）</strong>、<strong>美團</strong> 或官網預訂，部分門市可免費取消。旺季（元旦、春節、五一、十一黃金週）價格可能上漲 30–50%，建議提前 1–2 個月鎖定。三亞各景區旁另有大量精品民宿，透過 <strong>Airbnb</strong> 亦可找到 NT$800–1,500 的海景民宿。</p>
+  </div>
+</div>
+</div>
+</section>
+
+
+<!-- ================================
+     CH2 交通暨行程規劃
+================================ -->
+<section id="ch2">
+<div class="ch-wrap mid">
+<div class="ch-inner">
+
+  <div class="ch-head">
+    <div class="ch-num">02</div>
+    <div class="ch-meta">
+      <span class="tag">Chapter 2</span>
+      <h2>交通暨行程規劃<br>10日環島站點全攻略</h2>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <p class="lead">以環島高鐵各站為軸心，規劃每日行程。東環線風景秀麗（海口→三亞），西環線閒適寧靜（三亞→海口），建議順時針一圈完整體驗全島精華。</p>
+
+  <!-- Station Progress -->
+  <div class="station-progress">
+    <div class="sp-item"><div class="sp-dot highlight"></div><div class="sp-name">海口</div><div class="sp-day">Day1-2</div></div>
+    <div class="sp-line"></div>
+    <div class="sp-item"><div class="sp-dot"></div><div class="sp-name">文昌</div><div class="sp-day">Day3</div></div>
+    <div class="sp-line"></div>
+    <div class="sp-item"><div class="sp-dot"></div><div class="sp-name">瓊海</div><div class="sp-day">Day4</div></div>
+    <div class="sp-line"></div>
+    <div class="sp-item"><div class="sp-dot"></div><div class="sp-name">萬寧</div><div class="sp-day">Day5</div></div>
+    <div class="sp-line"></div>
+    <div class="sp-item"><div class="sp-dot"></div><div class="sp-name">陵水</div><div class="sp-day">Day6</div></div>
+    <div class="sp-line"></div>
+    <div class="sp-item"><div class="sp-dot highlight" style="background:#D9553B;"></div><div class="sp-name">三亞</div><div class="sp-day">Day7-8</div></div>
+    <div class="sp-line west-line"></div>
+    <div class="sp-item"><div class="sp-dot west"></div><div class="sp-name">東方</div><div class="sp-day">Day9</div></div>
+    <div class="sp-line west-line"></div>
+    <div class="sp-item"><div class="sp-dot west"></div><div class="sp-name">儋州</div><div class="sp-day">Day9</div></div>
+    <div class="sp-line west-line"></div>
+    <div class="sp-item"><div class="sp-dot highlight"></div><div class="sp-name">海口</div><div class="sp-day">Day10</div></div>
+  </div>
+
+  <!-- Day nav buttons -->
+  <div class="day-nav" id="dayNav">
+    <button class="day-btn active" onclick="showDay(0,this)">Day 0｜出發日</button>
+    <button class="day-btn" onclick="showDay(1,this)">Day 1–2｜海口</button>
+    <button class="day-btn" onclick="showDay(2,this)">Day 3｜文昌</button>
+    <button class="day-btn" onclick="showDay(3,this)">Day 4｜瓊海博鰲</button>
+    <button class="day-btn" onclick="showDay(4,this)">Day 5｜萬寧</button>
+    <button class="day-btn" onclick="showDay(5,this)">Day 6｜陵水</button>
+    <button class="day-btn" onclick="showDay(6,this)">Day 7–8｜三亞</button>
+    <button class="day-btn" onclick="showDay(7,this)">Day 9｜西環東方→儋州</button>
+    <button class="day-btn" onclick="showDay(8,this)">Day 10｜儋州→海口·返台</button>
+  </div>
+
+  <!-- Day 0 -->
+  <div class="day-block visible" id="day0">
+    <div class="day-header" data-bg="✈">
+      <div class="day-num-badge">D0</div>
+      <div class="day-info">
+        <div class="day-title">台灣 → 海口｜抵達入境</div>
+        <div class="day-route">桃園 / 高雄機場 → 海口美蘭國際機場（HAK）</div>
+        <div class="day-station-badge">🛫 飛行約 1.5–2 小時</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-card">
+        <div class="day-card-title"><span>✈</span>航班資訊</div>
+        <div class="day-step"><div class="day-step-time">出發</div><div class="day-step-text"><strong>廈門航空、中華航空、海南航空</strong>均有兩岸直航班次，建議搭乘早班機，抵達後有充裕時間辦理入境。</div></div>
+        <div class="day-step"><div class="day-step-time">入境</div><div class="day-step-text">持<strong>台灣護照</strong>可辦理「海南自由貿易港旅遊免簽」（免簽停留30天），入境流程約30分鐘。填寫健康申報單、通過海關即完成。</div></div>
+        <div class="day-step"><div class="day-step-time">SIM卡</div><div class="day-step-text">建議在機場辦理<strong>中國聯通/電信漫遊SIM卡</strong>，或提前在台購買海南上網卡，確保網路暢通。</div></div>
+      </div>
+      <div class="day-card">
+        <div class="day-card-title"><span>🚌</span>機場→市區交通</div>
+        <div class="day-step"><div class="day-step-time">方式1</div><div class="day-step-text">搭乘<strong>機場地鐵1號線</strong>→ 海口東站，票價 ¥6，全程約40分鐘，最省錢便利。</div></div>
+        <div class="day-step"><div class="day-step-time">方式2</div><div class="day-step-text"><strong>機場巴士</strong>多條路線直達市區各大飯店，票價 ¥20，車程30–40分鐘。</div></div>
+        <div class="day-step"><div class="day-step-time">方式3</div><div class="day-step-text"><strong>滴滴出行</strong>（中國版Uber）叫車方便，費用約 ¥60–80，適合攜帶大件行李家庭。</div></div>
+        <div class="transport-badge">🚄 抵達後至海口東站，明日啟動環島之旅</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 1-2 海口 -->
+  <div class="day-block" id="day1">
+    <div class="day-header" data-bg="🏙">
+      <div class="day-num-badge">D1–2</div>
+      <div class="day-info">
+        <div class="day-title">海口市｜起點城市深度探索</div>
+        <div class="day-route">海口東站 · 騎樓老街 · 火山口公園</div>
+        <div class="day-station-badge">🚄 海口東站 / 海口站</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-card">
+        <div class="day-card-title"><span>📍</span>Day 1 行程</div>
+        <div class="day-step"><div class="day-step-time">上午</div><div class="day-step-text"><strong>騎樓老街（中山路）</strong>—南洋風格百年建築群，品嚐抱羅粉早點，徒步閒逛感受海口舊城風情。</div></div>
+        <div class="day-step"><div class="day-step-time">下午</div><div class="day-step-text"><strong>海口灣/假日海灘</strong>—沿海岸步道漫步，欣賞瓊州海峽海景，孩童可在沙灘玩耍，下午茶品嚐椰子冰淇淋。</div></div>
+        <div class="day-step"><div class="day-step-time">晚間</div><div class="day-step-text"><strong>府城老街</strong>夜市—品嚐海南在地小吃：清補涼、海南粉、椰奶布丁，感受本地人的夜生活。</div></div>
+      </div>
+      <div class="day-card">
+        <div class="day-card-title"><span>📍</span>Day 2 行程</div>
+        <div class="day-step"><div class="day-step-time">上午</div><div class="day-step-text"><strong>海口火山口國家地質公園</strong>—距市區25公里，搭公車1.5小時可達。亞洲最大的火山口湖，孩童可探索熔岩隧道，地質奇景震撼。</div></div>
+        <div class="day-step"><div class="day-step-time">下午</div><div class="day-step-text"><strong>五公祠 + 秀英炮台</strong>—了解海南歷史文化，近海口西站，可步行前往。歷史遺跡與海景相映，適合親子文化體驗。</div></div>
+        <div class="day-step"><div class="day-step-time">晚間</div><div class="day-step-text">準備行囊，明日搭乘<strong>東環高鐵</strong>前往文昌，建議提前在12306 APP或現場購票。</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 3 文昌 -->
+  <div class="day-block" id="day2">
+    <div class="day-header" data-bg="🚀">
+      <div class="day-num-badge">D3</div>
+      <div class="day-info">
+        <div class="day-title">海口 → 文昌｜航天夢想之城</div>
+        <div class="day-route">高鐵約 40 分鐘 · 文昌航天發射場 · 清瀾港</div>
+        <div class="day-station-badge">🚄 海口東站 → 文昌站</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-card">
+        <div class="day-card-title"><span>🚀</span>文昌精華行程</div>
+        <div class="day-step"><div class="day-step-time">08:30</div><div class="day-step-text"><strong>搭乘東環高鐵</strong>出發，車程40分鐘抵達文昌站，站外搭計程車或景區巴士。</div></div>
+        <div class="day-step"><div class="day-step-time">10:00</div><div class="day-step-text"><strong>文昌航天發射場</strong>（5A景區）—中國四大發射場之一，航天科技館互動展覽豐富，孩童可模擬太空人操作，有機會目睹火箭發射（需提前查詢）。</div></div>
+        <div class="day-step"><div class="day-step-time">14:00</div><div class="day-step-text"><strong>清瀾港紅樹林</strong>—租乘竹筏穿越紅樹林水道，觀賞候鳥棲息，自然生態體驗，孩童特別著迷。</div></div>
+        <div class="day-step"><div class="day-step-time">17:00</div><div class="day-step-text"><strong>東郊椰林</strong>—連片椰樹海岸，騎行或步行皆宜，傍晚光線下攝影效果極佳，是打卡必去地點。</div></div>
+      </div>
+      <div class="day-card">
+        <div class="day-card-title"><span>🚌</span>當日交通指南</div>
+        <div class="day-step"><div class="day-step-time">站→景</div><div class="day-step-text">文昌站外搭<strong>景區直通巴士</strong>至航天發射場，約25分鐘，票價¥15，班次密集。</div></div>
+        <div class="day-step"><div class="day-step-time">景→景</div><div class="day-step-text">各景點間距離15–25公里，建議搭乘<strong>滴滴出行</strong>靈活移動，費用¥20–40/次。</div></div>
+        <div class="day-step"><div class="day-step-time">傍晚</div><div class="day-step-text">返回文昌站，住宿文昌市區，或繼續乘高鐵前往瓊海（約30分鐘）。</div></div>
+        <div class="transport-badge">🚀 文昌 = 中國航天精神之城，親子必訪</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 4 瓊海博鰲 -->
+  <div class="day-block" id="day3">
+    <div class="day-header" data-bg="🌊">
+      <div class="day-num-badge">D4</div>
+      <div class="day-info">
+        <div class="day-title">文昌 → 瓊海｜博鰲亞洲論壇之都</div>
+        <div class="day-route">高鐵約 30 分鐘 · 玉帶灘 · 博鰲景區</div>
+        <div class="day-station-badge">🚄 文昌站 → 博鰲站</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-card">
+        <div class="day-card-title"><span>🏛️</span>博鰲精華行程</div>
+        <div class="day-step"><div class="day-step-time">09:00</div><div class="day-step-text"><strong>搭高鐵至博鰲站</strong>，車程約30分鐘，出站步行12分鐘即可進入景區。</div></div>
+        <div class="day-step"><div class="day-step-time">10:00</div><div class="day-step-text"><strong>博鰲亞洲論壇景區</strong>（5A景區）—參觀永久會址，了解國際政治論壇文化，孩童可感受國際外交氛圍，極具教育意義。</div></div>
+        <div class="day-step"><div class="day-step-time">12:30</div><div class="day-step-text"><strong>玉帶灘奇觀</strong>—細長沙洲將萬泉河與南海一分為二，一側河水、一側海水，奇景堪稱海南最特殊地貌，攝影絕佳。</div></div>
+        <div class="day-step"><div class="day-step-time">15:00</div><div class="day-step-text"><strong>萬泉河竹筏漂流</strong>—搭乘竹筏遊覽入海口三角洲，熱帶叢林倒影，清風徐徐，愜意放鬆。</div></div>
+      </div>
+      <div class="day-card">
+        <div class="day-card-title"><span>🌴</span>周邊補充景點</div>
+        <div class="day-step"><div class="day-step-time">下午</div><div class="day-step-text"><strong>嘉積鎮古街</strong>—距博鰲15公里，搭公車可達。百年老街保留完整南洋建築，美食聚集，可嚐到正宗瓊海炒粉。</div></div>
+        <div class="day-step"><div class="day-step-time">傍晚</div><div class="day-step-text"><strong>椰寨特色村</strong>—黎族民俗文化展演，手工藤編、黎錦織布體驗，寓教於樂，適合親子互動。</div></div>
+        <div class="day-step"><div class="day-step-time">晚間</div><div class="day-step-text">入住博鰲景區飯店，或搭高鐵（30分鐘）前往<strong>萬寧</strong>住宿。</div></div>
+        <div class="transport-badge">🌊 博鰲站距景區僅步行距離，交通最便利</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 5 萬寧 -->
+  <div class="day-block" id="day4">
+    <div class="day-header" data-bg="🏄">
+      <div class="day-num-badge">D5</div>
+      <div class="day-info">
+        <div class="day-title">瓊海 → 萬寧｜衝浪王國日月灣</div>
+        <div class="day-route">高鐵約 25 分鐘 · 日月灣 · 神州半島</div>
+        <div class="day-station-badge">🚄 博鰲站 → 萬寧站</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-card">
+        <div class="day-card-title"><span>🏄</span>萬寧精華行程</div>
+        <div class="day-step"><div class="day-step-time">09:30</div><div class="day-step-text"><strong>日月灣</strong>—中國衝浪發源地！全年波浪穩定，衝浪學校雲集，初學者課程¥200起，孩童可體驗泡泡衝浪板。沙灘潔白細膩，適合全家戲水。</div></div>
+        <div class="day-step"><div class="day-step-time">12:00</div><div class="day-step-text"><strong>日月灣衝浪餐廳街</strong>—沙灘旁特色餐廳，嚐椰子雞湯、現撈海鮮，海風吹拂，悠閒用餐。</div></div>
+        <div class="day-step"><div class="day-step-time">14:30</div><div class="day-step-text"><strong>神州半島</strong>（5A景區）—南北海灘風格迥異，帆船、水上摩托、海釣等活動豐富，度假氛圍濃厚。</div></div>
+        <div class="day-step"><div class="day-step-time">17:00</div><div class="day-step-text"><strong>興隆熱帶植物園</strong>—全國最大熱帶植物園，數千種植物，雨林小火車遊覽，孩童必玩。</div></div>
+      </div>
+      <div class="day-card">
+        <div class="day-card-title"><span>🚌</span>萬寧交通攻略</div>
+        <div class="day-step"><div class="day-step-time">站→景</div><div class="day-step-text">萬寧站出口搭乘<strong>景區直通車</strong>至日月灣約20分鐘，票價¥10，也可預約民宿/酒店接送。</div></div>
+        <div class="day-step"><div class="day-step-time">景→景</div><div class="day-step-text">日月灣→神州半島距離8公里，滴滴出行約¥20，景區內設免費電瓶車。</div></div>
+        <div class="day-step"><div class="day-step-time">興隆</div><div class="day-step-text">興隆植物園距萬寧站15公里，建議搭計程車¥30往返，遊覽時間2小時。</div></div>
+        <div class="transport-badge">🏄 萬寧是海南衝浪聖地，全家必訪</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 6 陵水 -->
+  <div class="day-block" id="day5">
+    <div class="day-header" data-bg="🐠">
+      <div class="day-num-badge">D6</div>
+      <div class="day-info">
+        <div class="day-title">萬寧 → 陵水｜清水灣海底世界</div>
+        <div class="day-route">高鐵約 30 分鐘 · 清水灣 · 分界洲島</div>
+        <div class="day-station-badge">🚄 萬寧站 → 陵水站</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-card">
+        <div class="day-card-title"><span>🐠</span>陵水精華行程</div>
+        <div class="day-step"><div class="day-step-time">09:00</div><div class="day-step-text"><strong>分界洲島</strong>（5A景區）—南北氣候分界線所在，島上生態豐富。搭乘輪渡約15分鐘抵達，珊瑚礁浮潛課程¥150，孩童可乘玻璃船觀賞海底珊瑚。</div></div>
+        <div class="day-step"><div class="day-step-time">12:30</div><div class="day-step-text"><strong>黎安港漁港午餐</strong>—港口邊直選活海鮮，現撈現煮，螃蟹、生蠔、石斑魚新鮮實惠。</div></div>
+        <div class="day-step"><div class="day-step-time">14:30</div><div class="day-step-text"><strong>清水灣沙灘</strong>—海南水質透明度最高的海灣，下水即可看到魚群，浮潛勝地。沙質細膩、水流平緩，適合兒童戲水。</div></div>
+        <div class="day-step"><div class="day-step-time">17:00</div><div class="day-step-text"><strong>新村港漁排</strong>—水上漁村，搭小船遊覽，觀察疍家人（水上人家）傳統生活方式，文化獨特難忘。</div></div>
+      </div>
+      <div class="day-card">
+        <div class="day-card-title"><span>🛥️</span>陵水交通攻略</div>
+        <div class="day-step"><div class="day-step-time">站→景</div><div class="day-step-text">陵水站外搭<strong>公交3路</strong>至分界洲島碼頭，車程約20分鐘，票價¥5。</div></div>
+        <div class="day-step"><div class="day-step-time">島上</div><div class="day-step-text">分界洲島內有電瓶車，可購景區套票（含渡輪+電瓶車+浮潛器材）約¥200。</div></div>
+        <div class="day-step"><div class="day-step-time">下午</div><div class="day-step-text">返陸後搭滴滴前往清水灣酒店入住，傍晚漫步海灘看日落，是全程最美夕陽之一。</div></div>
+        <div class="transport-badge">🐠 陵水海水清澈度全島第一，潛水天堂</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 7-8 三亞 -->
+  <div class="day-block" id="day6">
+    <div class="day-header" data-bg="🌅">
+      <div class="day-num-badge">D7–8</div>
+      <div class="day-info">
+        <div class="day-title">陵水 → 三亞｜東環線終點·天涯海角</div>
+        <div class="day-route">高鐵約 20 分鐘 · 亞龍灣 · 天涯海角 · 南山</div>
+        <div class="day-station-badge">🚄 陵水站 → 三亞站</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-card">
+        <div class="day-card-title"><span>🌊</span>Day 7 行程</div>
+        <div class="day-step"><div class="day-step-time">上午</div><div class="day-step-text"><strong>亞龍灣熱帶天堂森林公園</strong>（5A景區）—搭乘索道俯瞰亞龍灣全景，海天一色壯觀絕美。叢林探險步道，孩童玩索道最興奮。</div></div>
+        <div class="day-step"><div class="day-step-time">下午</div><div class="day-step-text"><strong>亞龍灣沙灘</strong>—被CNN評選為中國最美沙灘，水質晶瑩。下午2–5點光線最佳，可浮潛、租乘香蕉船、飛魚等水上活動。</div></div>
+        <div class="day-step"><div class="day-step-time">晚間</div><div class="day-step-text"><strong>三亞灣椰夢長廊</strong>夜景—沿海步道散步，椰樹燈光倒映，品嚐各式夜市小吃，感受三亞夜生活。</div></div>
+      </div>
+      <div class="day-card">
+        <div class="day-card-title"><span>🏛️</span>Day 8 行程</div>
+        <div class="day-step"><div class="day-step-time">上午</div><div class="day-step-text"><strong>南山文化旅遊區</strong>（5A景區）—108公尺高海上觀音，站在海上平台仰望震撼心靈。南山佛教文化深厚，帶孩子認識中華信仰文化。</div></div>
+        <div class="day-step"><div class="day-step-time">下午</div><div class="day-step-text"><strong>天涯海角</strong>（5A景區）—中國最具浪漫象徵的景點，日落時分抵達最動人。景區不大，徒步30分鐘可逛完，親子合影打卡必到。</div></div>
+        <div class="day-step"><div class="day-step-time">晚間</div><div class="day-step-text"><strong>三亞解放路美食街</strong>—品嚐海南椰子雞火鍋、清補涼，感受三亞最在地的飲食文化，準備明日轉搭西環線。</div></div>
+        <div class="transport-badge">🌅 三亞景區間搭乘「三亞旅遊巴士」，一票暢遊</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 9 東方→儋州 -->
+  <div class="day-block" id="day7">
+    <div class="day-header" data-bg="🌿" style="background:linear-gradient(135deg,#1A4A3A,#0B6E6A);">
+      <div class="day-num-badge">D9</div>
+      <div class="day-info">
+        <div class="day-title">三亞 → 東方 → 儋州｜西環線風情</div>
+        <div class="day-route">高鐵約 90 分鐘 · 海花島 · 魚鱗洲</div>
+        <div class="day-station-badge">🚄 三亞站 → 東方站 → 儋州那大站（西環線）</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-card">
+        <div class="day-card-title"><span>🌿</span>東方站（停留2小時）</div>
+        <div class="day-step"><div class="day-step-time">09:30</div><div class="day-step-text">三亞搭乘<strong>西環高鐵</strong>至東方站，車程約50分鐘，票價約¥60。東方是黎族文化重鎮，節奏悠閒。</div></div>
+        <div class="day-step"><div class="day-step-time">10:30</div><div class="day-step-text"><strong>魚鱗洲公園</strong>—奇特的海蝕岩石地貌，黑色礁石如魚鱗層疊，浪花拍打蔚為壯觀，適合攝影。搭滴滴約¥15，免費入場。</div></div>
+        <div class="day-step"><div class="day-step-time">12:00</div><div class="day-step-text">東方市區品嚐<strong>黎族烤魚</strong>午餐，口味香辣，配上在地野菜，物價比三亞實惠許多。</div></div>
+        <div class="day-step"><div class="day-step-time">13:30</div><div class="day-step-text">繼續搭高鐵前往儋州那大站，車程約40分鐘。</div></div>
+      </div>
+      <div class="day-card">
+        <div class="day-card-title"><span>🏝️</span>儋州（海花島）</div>
+        <div class="day-step"><div class="day-step-time">14:30</div><div class="day-step-text"><strong>海花島</strong>—人工建造的巨型海上島嶼，狀如三朵花，高空鳥瞰壯觀。島上主題公園、水上樂園設施完善，孩童最開心的一站。</div></div>
+        <div class="day-step"><div class="day-step-time">下午</div><div class="day-step-text"><strong>水上樂園 / 主題商業街</strong>—各式水上滑梯、衝浪池，適合帶孩子玩耍半天，累了在島上用餐，晚間入住海花島酒店。</div></div>
+        <div class="day-step"><div class="day-step-time">晚間</div><div class="day-step-text">夜晚在島上看海，欣賞儋州海峽日落夜色，安靜愜意，與喧鬧的三亞截然不同。</div></div>
+        <div class="transport-badge">🌿 西環線人潮少，風景純粹，推薦放慢腳步</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 10 返回 -->
+  <div class="day-block" id="day8">
+    <div class="day-header" data-bg="🛫" style="background:linear-gradient(135deg,#3A2A1A,#6A4A2A);">
+      <div class="day-num-badge">D10</div>
+      <div class="day-info">
+        <div class="day-title">儋州 → 海口 → 返回台灣</div>
+        <div class="day-route">高鐵約 90 分鐘 · 海口市區 · 美蘭機場</div>
+        <div class="day-station-badge">🚄 儋州那大站 → 海口站（西環線完成）</div>
+      </div>
+    </div>
+    <div class="day-content">
+      <div class="day-card">
+        <div class="day-card-title"><span>🚄</span>返程行程</div>
+        <div class="day-step"><div class="day-step-time">08:00</div><div class="day-step-text">早起搭乘<strong>西環高鐵</strong>由儋州返回海口，車程約90分鐘，完成環島之旅最後一段，沿途欣賞西海岸椰林風光。</div></div>
+        <div class="day-step"><div class="day-step-time">10:30</div><div class="day-step-text">抵達<strong>海口站</strong>，寄存行李後於騎樓老街補買最後伴手禮，品嚐一碗告別版抱羅粉。</div></div>
+        <div class="day-step"><div class="day-step-time">13:00</div><div class="day-step-text">搭地鐵1號線至<strong>美蘭機場</strong>（¥6，40分鐘），辦理出境手續，提前3小時抵達機場。</div></div>
+        <div class="day-step"><div class="day-step-time">15:30</div><div class="day-step-text">搭機返回台灣，帶著滿滿椰香記憶與伴手禮回家！環島全程正式圓滿完成。</div></div>
+      </div>
+      <div class="day-card">
+        <div class="day-card-title"><span>✅</span>10日環島統計</div>
+        <div class="day-step"><div class="day-step-time">🚄 高鐵</div><div class="day-step-text">搭乘高鐵共 <strong>7 段</strong>，累積里程約 <strong>520 公里</strong>，總票價約 ¥200–280。</div></div>
+        <div class="day-step"><div class="day-step-time">🏝 站點</div><div class="day-step-text">走訪 <strong>8 個主要高鐵站</strong>：海口 → 文昌 → 博鰲 → 萬寧 → 陵水 → 三亞 → 東方 → 儋州。</div></div>
+        <div class="day-step"><div class="day-step-time">⭐ 景區</div><div class="day-step-text">共遊覽 <strong>12處</strong>景區（含7處5A），涵蓋航天、海灘、雨林、宗教、文化各類主題。</div></div>
+        <div class="day-step"><div class="day-step-time">💰 費用</div><div class="day-step-text">雙人預估旅費（不含機票）約 <strong>¥8,000–15,000</strong>，視住宿等級而異。</div></div>
+        <div class="transport-badge">🎉 環島成功！東西環線皆走過，海南不留遺憾</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================================
+     CH3 景點
+================================ -->
+<section id="ch3">
+<div class="ch-wrap slate" style="background:#0D2433;">
+<div class="ch-inner">
+  <div class="ch-head">
+    <div class="ch-num">03</div>
+    <div class="ch-meta">
+      <span class="tag">Chapter 3</span>
+      <h2>風光景點<br>5A景區 · 親子遊程 · 特色風景</h2>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <p class="lead-light">按高鐵站輻射精選各站必遊景點，5A景區、親子首選、特色風景一次全覽。</p>
+
+  <div class="spot-tabs">
+    <button class="spot-tab active" onclick="showSpots('all',this)">全部景點</button>
+    <button class="spot-tab" onclick="showSpots('5a',this)">⭐ 5A景區</button>
+    <button class="spot-tab" onclick="showSpots('family',this)">👨‍👩‍👧 親子首選</button>
+    <button class="spot-tab" onclick="showSpots('scenic',this)">🌅 特色風景</button>
+  </div>
+
+  <!-- All -->
+  <div class="spot-panel visible" id="sp-all">
+
+    <div class="spot-card" data-cat="5a family">
+      <div class="spot-visual" style="background:linear-gradient(135deg,rgba(11,110,138,.4),rgba(10,48,64,.8));">🚀<span class="badge-5a">5A景區</span><span class="badge-family">👨‍👩‍👧 親子</span></div>
+      <div class="spot-body">
+        <div class="spot-loc">文昌站 · 距站25公里</div>
+        <div class="spot-name">文昌航天發射場</div>
+        <div class="spot-desc">中國重要航天發射基地，航天科技館互動展覽精彩，有機會親眼目睹火箭升空的壯觀瞬間，點燃孩子的科學夢想。</div>
+        <div class="spot-meta"><span>🎫 ¥120</span><span>⏱ 半天</span><span>🚄 文昌站巴士</span></div>
+      </div>
+    </div>
+
+    <div class="spot-card" data-cat="5a scenic">
+      <div class="spot-visual" style="background:linear-gradient(135deg,rgba(43,104,64,.5),rgba(13,36,51,.8));">🌊<span class="badge-5a">5A景區</span><span class="badge-scenic">🌅 特色風景</span></div>
+      <div class="spot-body">
+        <div class="spot-loc">博鰲站 · 步行12分鐘</div>
+        <div class="spot-name">博鰲亞洲論壇景區·玉帶灘</div>
+        <div class="spot-desc">玉帶灘奇觀：細沙洲將萬泉河與南海一線分隔，兩側水色各異，是地球上最奇特的地理奇景之一。</div>
+        <div class="spot-meta"><span>🎫 ¥60</span><span>⏱ 半天</span><span>🚄 博鰲站步行</span></div>
+      </div>
+    </div>
+
+    <div class="spot-card" data-cat="family scenic">
+      <div class="spot-visual" style="background:linear-gradient(135deg,rgba(180,94,32,.4),rgba(13,36,51,.8));">🏄<span class="badge-5a">5A景區</span><span class="badge-family">👨‍👩‍👧 親子</span></div>
+      <div class="spot-body">
+        <div class="spot-loc">萬寧站 · 距站20公里</div>
+        <div class="spot-name">日月灣 · 神州半島</div>
+        <div class="spot-desc">中國衝浪運動發源聖地，全年波浪穩定。沙灘寬廣潔白，水上活動豐富多元，是親子海灘度假的完美選擇。</div>
+        <div class="spot-meta"><span>🎫 免費入場</span><span>⏱ 全天</span><span>🏄 衝浪課¥200起</span></div>
+      </div>
+    </div>
+
+    <div class="spot-card" data-cat="5a family">
+      <div class="spot-visual" style="background:linear-gradient(135deg,rgba(11,110,138,.5),rgba(13,36,51,.8));">🐠<span class="badge-5a">5A景區</span><span class="badge-family">👨‍👩‍👧 親子</span></div>
+      <div class="spot-body">
+        <div class="spot-loc">陵水站 · 距站18公里</div>
+        <div class="spot-name">分界洲島</div>
+        <div class="spot-desc">南北氣候分界線上的神奇島嶼，珊瑚礁完整保存，浮潛透明度極高，玻璃船可看到海底五彩珊瑚與熱帶魚群。</div>
+        <div class="spot-meta"><span>🎫 ¥200套票</span><span>⏱ 全天</span><span>🛥 輪渡15分鐘</span></div>
+      </div>
+    </div>
+
+    <div class="spot-card" data-cat="5a scenic">
+      <div class="spot-visual" style="background:linear-gradient(135deg,rgba(107,26,42,.5),rgba(13,36,51,.8));">🙏<span class="badge-5a">5A景區</span><span class="badge-scenic">🌅 特色風景</span></div>
+      <div class="spot-body">
+        <div class="spot-loc">三亞站 · 景區巴士</div>
+        <div class="spot-name">南山文化旅遊區</div>
+        <div class="spot-desc">108公尺巨型海上觀音像矗立在海面，是世界最高觀音像之一，佛教文化底蘊深厚，帶孩子了解中華信仰。</div>
+        <div class="spot-meta"><span>🎫 ¥150</span><span>⏱ 半天</span><span>🚌 三亞站巴士</span></div>
+      </div>
+    </div>
+
+    <div class="spot-card" data-cat="5a scenic">
+      <div class="spot-visual" style="background:linear-gradient(135deg,rgba(11,78,96,.5),rgba(13,36,51,.8));">💑<span class="badge-5a">5A景區</span><span class="badge-scenic">🌅 特色風景</span></div>
+      <div class="spot-body">
+        <div class="spot-loc">三亞站 · 景區巴士</div>
+        <div class="spot-name">天涯海角</div>
+        <div class="spot-desc">刻有「天涯」「海角」的巨石是中國最浪漫地標，日落時分海天一色令人動容。孩童在礁石間攀爬，大人感受天地壯闊。</div>
+        <div class="spot-meta"><span>🎫 ¥80</span><span>⏱ 2小時</span><span>🌅 日落最美</span></div>
+      </div>
+    </div>
+
+    <div class="spot-card" data-cat="5a family">
+      <div class="spot-visual" style="background:linear-gradient(135deg,rgba(43,80,24,.5),rgba(13,36,51,.8));">🌿<span class="badge-5a">5A景區</span><span class="badge-family">👨‍👩‍👧 親子</span></div>
+      <div class="spot-body">
+        <div class="spot-loc">陵水→保亭 · 轉車可達</div>
+        <div class="spot-name">呀諾達熱帶雨林</div>
+        <div class="spot-desc">海南唯一熱帶雨林5A景區，瀑布、溶洞、原始叢林交織，黎族文化表演帶孩子認識少數民族，知性刺激兼具。</div>
+        <div class="spot-meta"><span>🎫 ¥160</span><span>⏱ 全天</span><span>🌿 雨林探索</span></div>
+      </div>
+    </div>
+
+    <div class="spot-card" data-cat="5a family">
+      <div class="spot-visual" style="background:linear-gradient(135deg,rgba(43,104,80,.5),rgba(13,36,51,.8));">🦋<span class="badge-5a">5A景區</span><span class="badge-family">👨‍👩‍👧 親子</span></div>
+      <div class="spot-body">
+        <div class="spot-loc">三亞站 · 景區接駁</div>
+        <div class="spot-name">亞龍灣熱帶天堂森林公園</div>
+        <div class="spot-desc">叢林索道俯瞰亞龍灣全景，珊瑚礁浮潛，蝴蝶谷生態探索，高空滑翔等冒險活動，是全行程最刺激的一站。</div>
+        <div class="spot-meta"><span>🎫 ¥200</span><span>⏱ 全天</span><span>🚡 含纜車</span></div>
+      </div>
+    </div>
+
+    <div class="spot-card" data-cat="scenic">
+      <div class="spot-visual" style="background:linear-gradient(135deg,rgba(11,78,50,.5),rgba(13,36,51,.8));">🌊<span class="badge-scenic">🌅 特色風景</span></div>
+      <div class="spot-body">
+        <div class="spot-loc">東方站 · 距站10公里</div>
+        <div class="spot-name">魚鱗洲海蝕地貌</div>
+        <div class="spot-desc">黑色玄武岩海蝕岩層層疊疊如魚鱗，浪花拍打激起白色水花，是西環線最獨特的自然奇景，西側夕陽落海更是攝影極品。</div>
+        <div class="spot-meta"><span>🎫 免費</span><span>⏱ 1小時</span><span>🌅 夕陽必看</span></div>
+      </div>
+    </div>
+
+  </div>
+  <!-- 5A panel -->
+  <div class="spot-panel" id="sp-5a"></div>
+  <!-- family panel -->
+  <div class="spot-panel" id="sp-family"></div>
+  <!-- scenic panel -->
+  <div class="spot-panel" id="sp-scenic"></div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================================
+     CH4 餐廳
+================================ -->
+<section id="ch4">
+<div class="ch-wrap" style="background:var(--ivory);">
+<div class="ch-inner">
+  <div class="ch-head">
+    <div class="ch-num">04</div>
+    <div class="ch-meta">
+      <span class="tag">Chapter 4</span>
+      <h2>餐廳美食<br>沿線必嚐海南滋味</h2>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <p class="lead">精選各高鐵站鄰近餐廳，多位於飯店旁或景區附近，讓您旅途美食不間斷。</p>
+
+  <div class="food-grid">
+
+    <div class="food-card">
+      <span class="food-icon">🐔</span>
+      <div class="food-loc">海口 · 騎樓老街旁</div>
+      <div class="food-name">文昌雞一條街</div>
+      <div class="food-desc">文昌雞為海南四大名菜之首。白切做法保留雞肉原汁原味，搭配椰香蒸飯，是台灣旅客來海南必嚐的招牌菜，鮮嫩滑潤令人難忘。</div>
+      <div class="must-order">★ 必點：白切文昌雞 + 椰香飯 + 海南清湯</div>
+    </div>
+
+    <div class="food-card">
+      <span class="food-icon">🍜</span>
+      <div class="food-loc">海口 · 府城老街</div>
+      <div class="food-name">老海南抱羅粉</div>
+      <div class="food-desc">抱羅粉是海南最代表性的早點，米粉細滑配上酸辣湯底，加牛肉、花生碎、蔥花，一碗¥8–15，物美價廉，是連在地人都天天報到的早餐。</div>
+      <div class="must-order">★ 必點：牛腩抱羅粉 + 清補涼甜湯</div>
+    </div>
+
+    <div class="food-card">
+      <span class="food-icon">🌊</span>
+      <div class="food-loc">博鰲 · 亞洲論壇大酒店旁</div>
+      <div class="food-name">博鰲海鮮大排檔</div>
+      <div class="food-desc">博鰲港鮮魚直送，現撈龍利魚、花蟹、生蠔，清蒸最能展現原味。坐在臨河露台上邊吃邊看萬泉河，風景配美食，超值享受。</div>
+      <div class="must-order">★ 必點：清蒸龍利魚 + 薑蔥炒花蟹</div>
+    </div>
+
+    <div class="food-card">
+      <span class="food-icon">🥥</span>
+      <div class="food-loc">萬寧 · 興隆景區旁</div>
+      <div class="food-name">興隆椰香農家樂</div>
+      <div class="food-desc">興隆是海南咖啡與椰子的故鄉，農家樂內椰子雞清甜飄香，椰子糕、椰絲球現做現賣，南洋華僑風味料理異國情調濃厚。</div>
+      <div class="must-order">★ 必點：椰子雞煲 + 興隆咖啡 + 椰汁糕</div>
+    </div>
+
+    <div class="food-card">
+      <span class="food-icon">🦀</span>
+      <div class="food-loc">陵水 · 黎安港碼頭旁</div>
+      <div class="food-name">黎安港蟹記</div>
+      <div class="food-desc">黎安港是海南頂級螃蟹產地，直接向漁民現買現煮，蒜蓉炒花蟹香辣入味，清蒸生蠔鮮甜滑嫩，日落港邊用餐，人生一大享受。</div>
+      <div class="must-order">★ 必點：蒜蓉炒花蟹 + 白灼象鼻蚌</div>
+    </div>
+
+    <div class="food-card">
+      <span class="food-icon">🦞</span>
+      <div class="food-loc">三亞 · 大東海景區旁</div>
+      <div class="food-name">南海海鮮廣場</div>
+      <div class="food-desc">三亞最大的活海鮮自選市場，龍蝦、赤蟹、象鼻蚌、海參現撈現挑，可指定清蒸、椒鹽等做法，場地開闊，適合家庭宴請。</div>
+      <div class="must-order">★ 必點：清蒸龍蝦 + 椰子雞火鍋</div>
+    </div>
+
+    <div class="food-card">
+      <span class="food-icon">🍦</span>
+      <div class="food-loc">三亞 · 解放路商圈</div>
+      <div class="food-name">椰子灣甜品店</div>
+      <div class="food-desc">主打海南特色甜點：清補涼（薏米椰汁健康甜湯）、椰子冰淇淋、仙草凍，在三亞35°C的豔陽下，一碗清補涼甘甜解暑，孩童最愛。</div>
+      <div class="must-order">★ 必點：清補涼 + 現剖椰子 + 椰子冰淇淋</div>
+    </div>
+
+    <div class="food-card">
+      <span class="food-icon">🐟</span>
+      <div class="food-loc">東方 · 魚鱗洲景區旁</div>
+      <div class="food-name">東方黎族烤魚</div>
+      <div class="food-desc">黎族傳統烤魚技法，以芭蕉葉包裹新鮮石斑魚炭烤，撒上香料與辣椒，外酥內嫩，搭配黎族竹筒米飯，獨特民族風味難忘。</div>
+      <div class="must-order">★ 必點：黎族芭蕉葉烤魚 + 竹筒米飯</div>
+    </div>
+
+  </div>
+
+  <!-- 著名小吃專區 -->
+  <div style="margin-top:3.5rem;">
+    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem;flex-wrap:wrap;">
+      <div style="font-family:'Noto Serif TC',serif;font-size:1.4rem;font-weight:900;color:var(--deep);">🥢 沿線著名小吃</div>
+      <div style="flex:1;height:1px;background:linear-gradient(90deg,rgba(10,173,160,.35),transparent);min-width:30px;"></div>
+      <div style="font-size:.78rem;color:var(--teal);font-weight:600;white-space:nowrap;background:rgba(10,173,160,.08);border:1px solid rgba(10,173,160,.2);padding:.3rem .8rem;border-radius:20px;">街邊巷弄 · 在地滋味</div>
+    </div>
+    <div class="snack-grid">
+
+      <div class="snack-card">
+        <div class="snack-emoji">🍚</div>
+        <div class="snack-info">
+          <div class="snack-name">海南粉</div>
+          <div class="snack-where">📍 全島 · 早市攤位</div>
+          <div class="snack-desc">粗米粉澆上醃製酸筍、花生碎、炸蒜、香菜、辣椒油冷拌而成，酸辣鮮香層次豐富。是海南最古老的傳統米食，每碗 ¥8–12，每個早市必有。</div>
+          <div class="snack-price">¥8–12 ≈ <strong>NT$36–54</strong></div>
+        </div>
+      </div>
+
+      <div class="snack-card">
+        <div class="snack-emoji">🧆</div>
+        <div class="snack-info">
+          <div class="snack-name">煎堆（炸年糕球）</div>
+          <div class="snack-where">📍 海口、文昌 · 老街早市</div>
+          <div class="snack-desc">糯米外皮裹紅豆沙油炸至金黃，外皮酥脆帶芝麻香，內餡軟糯甜蜜，一顆只要 ¥3–5，是孩童最愛的傳統早點小吃，老街現炸最香。</div>
+          <div class="snack-price">¥3–5/顆 ≈ <strong>NT$14–23</strong></div>
+        </div>
+      </div>
+
+      <div class="snack-card">
+        <div class="snack-emoji">🥛</div>
+        <div class="snack-info">
+          <div class="snack-name">清補涼</div>
+          <div class="snack-where">📍 全島 · 甜品攤、街邊店</div>
+          <div class="snack-desc">海南最具代表性的消暑甜湯，以薏米、紅豆、花生、椰汁、仙草、粉條混搭，淋上新鮮椰奶，清爽解熱。一碗 ¥10–18，無論何時都讓人沁心。</div>
+          <div class="snack-price">¥10–18 ≈ <strong>NT$45–81</strong></div>
+        </div>
+      </div>
+
+      <div class="snack-card">
+        <div class="snack-emoji">🌮</div>
+        <div class="snack-info">
+          <div class="snack-name">黎族竹筒糯米飯</div>
+          <div class="snack-where">📍 保亭、五指山 · 黎族村落</div>
+          <div class="snack-desc">新鮮竹節填入椰汁浸泡的糯米，加香葉炭火慢烘，剖竹散發竹香椰香，飯粒軟糯清甜，是黎族最具代表性傳統食物，旅遊區多有販售。</div>
+          <div class="snack-price">¥15–25 ≈ <strong>NT$68–113</strong></div>
+        </div>
+      </div>
+
+      <div class="snack-card">
+        <div class="snack-emoji">🥟</div>
+        <div class="snack-info">
+          <div class="snack-name">椰子船（椰香粽）</div>
+          <div class="snack-where">📍 海口、文昌 · 市集攤位</div>
+          <div class="snack-desc">以椰葉包裹糯米與豬肉、鹹蛋黃，形如小船蒸煮而成，椰葉清香滲入糯米，鹹甜交融，是端午時節必備節慶美食，旅遊市集常見。</div>
+          <div class="snack-price">¥8–15 ≈ <strong>NT$36–68</strong></div>
+        </div>
+      </div>
+
+      <div class="snack-card">
+        <div class="snack-emoji">🍢</div>
+        <div class="snack-info">
+          <div class="snack-name">甜糟湯圓</div>
+          <div class="snack-where">📍 海口、三亞 · 夜市攤</div>
+          <div class="snack-desc">糯米發酵的甜酒釀湯底，加入白湯圓和荷包蛋，微甜帶淡淡酒香，是海南夜市最受歡迎的消夜甜湯，溫熱版暖胃，冰鎮版解暑。</div>
+          <div class="snack-price">¥8–15 ≈ <strong>NT$36–68</strong></div>
+        </div>
+      </div>
+
+      <div class="snack-card">
+        <div class="snack-emoji">🌰</div>
+        <div class="snack-info">
+          <div class="snack-name">現炒鹽焗腰果</div>
+          <div class="snack-where">📍 各城市 · 路邊攤/超市</div>
+          <div class="snack-desc">海南為中國腰果最大產地，路邊現炒鹽焗腰果顆粒飽滿、鬆脆鹹香，比超市新鮮多倍，散裝論斤賣，是零嘴首選也是伴手禮必帶。</div>
+          <div class="snack-price">¥20–35/斤 ≈ <strong>NT$90–158</strong></div>
+        </div>
+      </div>
+
+      <div class="snack-card">
+        <div class="snack-emoji">🍭</div>
+        <div class="snack-info">
+          <div class="snack-name">文昌薑糖</div>
+          <div class="snack-where">📍 文昌 · 老街市集</div>
+          <div class="snack-desc">老薑汁熬製的百年傳統糖果，辛甜交織入口即化，帶有薑的暖意。文昌老字號手工製作，小袋包裝方便帶走，暖胃祛濕，旅途中的養生小點心。</div>
+          <div class="snack-price">¥10–20/包 ≈ <strong>NT$45–90</strong></div>
+        </div>
+      </div>
+
+      <div class="snack-card">
+        <div class="snack-emoji">🫙</div>
+        <div class="snack-info">
+          <div class="snack-name">萬寧老椰子</div>
+          <div class="snack-where">📍 萬寧 · 路邊椰農攤位</div>
+          <div class="snack-desc">椰農現砍老椰子，清甜天然椰水直接飲用，果香比超市罐裝濃郁數倍，椰肉刮下來嚼食更是美味。旅途最天然的補水補電解質聖品，一顆 ¥8–15。</div>
+          <div class="snack-price">¥8–15/顆 ≈ <strong>NT$36–68</strong></div>
+        </div>
+      </div>
+
+      <div class="snack-card">
+        <div class="snack-emoji">🍳</div>
+        <div class="snack-info">
+          <div class="snack-name">加積鴨（白切鴨）</div>
+          <div class="snack-where">📍 瓊海加積鎮 · 鎮內老店</div>
+          <div class="snack-desc">飼養於萬泉河邊的水鴨白切而成，鴨皮薄而滑嫩、鴨肉鮮甜緊實，是台灣旅客最難忘的隱藏美食。在地老店從早到中午就賣完，要早去！</div>
+          <div class="snack-price">¥30–60 ≈ <strong>NT$135–270</strong></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+<!-- ================================
+     CH5 行前叮嚀
+================================ -->
+<section id="ch5">
+<div class="ch-wrap" style="background:linear-gradient(160deg,#0D2433,#0A3040);">
+<div class="ch-inner">
+  <div class="ch-head">
+    <div class="ch-num">05</div>
+    <div class="ch-meta">
+      <span class="tag">Chapter 5</span>
+      <h2>行前叮嚀<br>出發前必知 · 緊急處置</h2>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <p class="lead-light">周全準備讓旅程更安心，以下重點行前叮嚀與緊急應對，請務必仔細閱讀。</p>
+
+  <div class="tips-grid">
+
+    <div class="tip-card">
+      <span class="tip-icon">📋</span>
+      <div class="tip-ttl">證件與簽注</div>
+      <ul class="tip-ul">
+        <li>持台灣護照可申請「海南自由貿易港旅遊免簽」，免簽停留30天以內免辦手續</li>
+        <li>超過30天或前往海南以外省市，需持台胞證，可在台灣各公證處辦理，建議提前2週申辦</li>
+        <li>攜帶護照正本、備用2吋大頭照×2張</li>
+        <li>建議手機存留護照、簽注電子備份，以備不時之需</li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <span class="tip-icon">💳</span>
+      <div class="tip-ttl">貨幣與支付</div>
+      <ul class="tip-ul">
+        <li>台灣出發前在銀行換取人民幣（CNY），建議帶¥3,000–5,000現金備用</li>
+        <li>中國境內主流為微信支付與支付寶，強烈建議在台灣提前下載並綁定境外信用卡</li>
+        <li>支付寶已支援外籍人士以海外信用卡充值「境外旅客版」，操作更簡便</li>
+        <li>飯店、大型景區多接受VISA/Master，請確認信用卡開通海外刷卡</li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <span class="tip-icon">📱</span>
+      <div class="tip-ttl">網路與APP準備</div>
+      <ul class="tip-ul">
+        <li>中國境內無法使用Google、LINE、Facebook。建議在台灣提前安裝VPN並測試（不可在中國境內下載）</li>
+        <li>必備APP：高德地圖（導航）、百度翻譯（含離線）、滴滴出行（叫車）、12306（訂高鐵票）</li>
+        <li>推薦購買中國電信/聯通海南旅遊SIM卡，機場或網路預購均可</li>
+        <li>下載景點離線地圖以防信號不佳區域使用</li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <span class="tip-icon">☀️</span>
+      <div class="tip-ttl">氣候與裝備</div>
+      <ul class="tip-ul">
+        <li>海南全年高溫，最適旅遊季節為11月–翌年4月（乾季），5–10月為颱風季</li>
+        <li>防曬極其重要：SPF50+防曬乳、防曬外套帽子、UV太陽眼鏡缺一不可</li>
+        <li>颱風季出發前務必查詢天氣預報，並購買含取消費用的旅遊保險</li>
+        <li>親子建議帶兒童防曬衣、沙灘水鞋（礁石多）、防蚊液（雨後蚊蟲多）</li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <span class="tip-icon">🏥</span>
+      <div class="tip-ttl">健康與醫療</div>
+      <ul class="tip-ul">
+        <li>出發前購買含「醫療費用保障 + 緊急救援」的旅遊保險，每日費用約NT$200–400</li>
+        <li>常備藥物：腸胃藥、感冒藥、抗組織胺、退燒藥（含兒童劑量）、防蚊液</li>
+        <li>慢性病患者攜帶足量藥物及中英文病歷摘要、診斷證明</li>
+        <li>飲食注意衛生，生食海鮮請選擇正規餐廳，避免路邊生蠔</li>
+      </ul>
+    </div>
+
+    <div class="tip-card">
+      <span class="tip-icon">🌊</span>
+      <div class="tip-ttl">海上活動安全</div>
+      <ul class="tip-ul">
+        <li>水上活動務必穿著合格救生衣，勿私自前往無人管理沙灘游泳</li>
+        <li>衝浪、潛水、滑翔傘等活動選擇有合格教練執照的機構</li>
+        <li>注意景區公告的禁泳區與當日浪況警示旗（紅旗禁止下水）</li>
+        <li>兒童戲水全程需有家長貼身陪同，幼童穿戴兒童浮力背心</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="sos-box">
+    <h3>🆘 緊急聯絡資訊一覽</h3>
+    <div class="sos-grid">
+      <div class="sos-item"><div class="sl">中國緊急報警</div><div class="sv">📞 110</div></div>
+      <div class="sos-item"><div class="sl">醫療急救</div><div class="sv">📞 120</div></div>
+      <div class="sos-item"><div class="sl">火災報警</div><div class="sv">📞 119</div></div>
+      <div class="sos-item"><div class="sl">海南旅遊投訴</div><div class="sv">📞 12301</div></div>
+      <div class="sos-item"><div class="sl">台灣外交部緊急服務</div><div class="sv">📞 +886-800-085-095</div></div>
+      <div class="sos-item"><div class="sl">海口美蘭機場</div><div class="sv">📞 +86-898-6574-2714</div></div>
+      <div class="sos-item"><div class="sl">三亞鳳凰機場</div><div class="sv">📞 +86-898-8826-0114</div></div>
+      <div class="sos-item"><div class="sl">高鐵12306客服</div><div class="sv">📞 12306</div></div>
+    </div>
+  </div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================================
+     CH6 伴手禮
+================================ -->
+<section id="ch6">
+<div class="ch-wrap" style="background:#F2E4C4;">
+<div class="ch-inner">
+  <div class="ch-head">
+    <div class="ch-num">06</div>
+    <div class="ch-meta">
+      <span class="tag">Chapter 6</span>
+      <h2>伴手禮<br>帶回台灣的海南味道</h2>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <p class="lead">精選台灣旅客最愛的海南伴手禮，超市、景區門市、免稅商城均可購得，行前預算參考如下。</p>
+
+  <div class="sv-grid">
+
+    <div class="sv-card">
+      <span class="sv-icon">☕</span>
+      <div class="sv-name">興隆精品咖啡豆</div>
+      <div class="sv-desc">南洋華僑帶回的獨特品種，香氣濃郁不苦澀，是海南最具代表性的風土飲品，咖啡愛好者必買。</div>
+      <span class="sv-price">¥50–¥200/包</span>
+      <span class="sv-tip">📍 萬寧興隆景區</span>
+    </div>
+
+    <div class="sv-card">
+      <span class="sv-icon">🥥</span>
+      <div class="sv-name">椰子糖 · 椰子酥</div>
+      <div class="sv-desc">海南最具代表性的零食，軟糯香甜椰子糖獨具風味，椰子酥酥脆可口，老少皆宜，一盒送禮超體面。</div>
+      <span class="sv-price">¥20–¥80/盒</span>
+      <span class="sv-tip">📍 各大超市均有</span>
+    </div>
+
+    <div class="sv-card">
+      <span class="sv-icon">🌿</span>
+      <div class="sv-name">海南沉香製品</div>
+      <div class="sv-desc">「天下第一香」海南沉香，香薰線香、手鍊擺件各式各樣，是高端贈禮首選，品質遠超越海外進口品。</div>
+      <span class="sv-price">¥100–¥5000</span>
+      <span class="sv-tip">📍 三亞免稅店</span>
+    </div>
+
+    <div class="sv-card">
+      <span class="sv-icon">💎</span>
+      <div class="sv-name">海南南珠</div>
+      <div class="sv-desc">海南南珠品質居中國之冠，光澤圓潤，項鍊、耳環款式多元，三亞珠寶市場最為集中，注意索取鑑定書。</div>
+      <span class="sv-price">¥200–¥10,000</span>
+      <span class="sv-tip">📍 三亞珠寶市場</span>
+    </div>
+
+    <div class="sv-card">
+      <span class="sv-icon">🌺</span>
+      <div class="sv-name">黎錦手工藝品</div>
+      <div class="sv-desc">黎族傳統紡織非物質文化遺產，色彩鮮豔的手工包袋、服飾、壁掛，獨一無二的民族工藝，值得珍藏。</div>
+      <span class="sv-price">¥80–¥800</span>
+      <span class="sv-tip">📍 東方黎族文化村</span>
+    </div>
+
+    <div class="sv-card">
+      <span class="sv-icon">🍯</span>
+      <div class="sv-name">椰子油 · 椰子醬</div>
+      <div class="sv-desc">文昌冷壓初榨椰子油，烹飪護膚兩用，品質超越進口品牌，椰子醬抹吐司香甜濃郁，是廚房必備良品。</div>
+      <span class="sv-price">¥40–¥120/瓶</span>
+      <span class="sv-tip">📍 文昌超市</span>
+    </div>
+
+    <div class="sv-card">
+      <span class="sv-icon">🫙</span>
+      <div class="sv-name">文昌白胡椒</div>
+      <div class="sv-desc">萬寧、文昌產的白胡椒香氣濃烈，品質遠超市售胡椒粉，磨粉撒入湯品立即提升層次，是料理達人最愛的廚房香料。</div>
+      <span class="sv-price">¥20–¥60/罐</span>
+      <span class="sv-tip">📍 文昌 / 萬寧市場</span>
+    </div>
+
+    <div class="sv-card">
+      <span class="sv-icon">🎎</span>
+      <div class="sv-name">椰雕工藝品</div>
+      <div class="sv-desc">以椰殼精雕細琢的工藝擺件，茶杯、雕塑、相框，天然材質紋路獨特，是極具海南特色的高質感紀念品。</div>
+      <span class="sv-price">¥30–¥300</span>
+      <span class="sv-tip">📍 海口騎樓老街</span>
+    </div>
+
+  </div>
+
+  <div style="background:var(--white);border-radius:18px;padding:1.8rem 2rem;margin-top:2.5rem;border:1px solid rgba(201,146,26,.2);">
+    <p style="font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:700;color:var(--deep);margin-bottom:.8rem;">💡 購物小提醒</p>
+    <p style="font-size:.88rem;color:#667;line-height:1.85;">三亞國際免稅城（位於三亞站旁）是中國最大離島免稅商城，香水、化妝品、奢侈品均可免稅購買。台灣旅客每次可免稅購買限額為人民幣 <strong>10萬元</strong>，請保留購物憑證，入境台灣時需申報。高端珠寶、沉香購買時務必索取鑑定書與發票，並確認品牌有合法授權。</p>
+  </div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================================
+     BUDGET 預算規劃
+================================ -->
+<section id="budget">
+<div class="budget-wrap">
+<div class="ch-inner">
+
+  <div class="ch-head">
+    <div class="ch-num" style="color:rgba(201,146,26,.12);">💰</div>
+    <div class="ch-meta">
+      <span class="tag" style="background:var(--gold);">附錄</span>
+      <h2>10日環島預算規劃<br>台幣完整費用試算</h2>
+    </div>
+  </div>
+  <div class="divider" style="background:linear-gradient(90deg,var(--gold),var(--amber));"></div>
+  <p class="lead">以下費用以<strong>雙人成人 + 1兒童（共3人）</strong>為計算基準，人民幣兌台幣匯率以 <strong>1 CNY ≈ 4.5 NTD</strong> 計算，提供省錢方案與舒適方案兩種預算供參考。</p>
+
+  <!-- 方案切換 -->
+  <div class="budget-tabs">
+    <button class="budget-tab active" onclick="showBudget('economy',this)">💡 省錢方案（背包客）</button>
+    <button class="budget-tab" onclick="showBudget('comfort',this)">🌟 舒適方案（一般家庭）</button>
+    <button class="budget-tab" onclick="showBudget('tips',this)">✂️ 省錢技巧</button>
+  </div>
+
+  <!-- 省錢方案 -->
+  <div class="budget-panel visible" id="b-economy">
+    <div class="budget-summary">
+      <div class="bs-card">
+        <span class="bs-icon">✈️</span>
+        <div class="bs-label">機票（來回3人）</div>
+        <div class="bs-val">NT$21,000</div>
+        <div class="bs-sub">¥4,667 · 早鳥票</div>
+      </div>
+      <div class="bs-card">
+        <span class="bs-icon">🏨</span>
+        <div class="bs-label">住宿（9晚）</div>
+        <div class="bs-val">NT$8,100</div>
+        <div class="bs-sub">均價¥200/晚</div>
+      </div>
+      <div class="bs-card">
+        <span class="bs-icon">🚄</span>
+        <div class="bs-label">高鐵+交通</div>
+        <div class="bs-val">NT$4,500</div>
+        <div class="bs-sub">¥1,000 · 3人合計</div>
+      </div>
+      <div class="bs-card">
+        <span class="bs-icon">🎫</span>
+        <div class="bs-label">景點門票</div>
+        <div class="bs-val">NT$9,000</div>
+        <div class="bs-sub">¥2,000 · 3人合計</div>
+      </div>
+      <div class="bs-card">
+        <span class="bs-icon">🍜</span>
+        <div class="bs-label">餐飲（10天）</div>
+        <div class="bs-val">NT$13,500</div>
+        <div class="bs-sub">¥100/人/天</div>
+      </div>
+      <div class="bs-card" style="border-color:rgba(217,85,59,.3);">
+        <span class="bs-icon">📦</span>
+        <div class="bs-label">伴手禮雜費</div>
+        <div class="bs-val">NT$4,500</div>
+        <div class="bs-sub">¥1,000 · 預算</div>
+      </div>
+    </div>
+
+    <div class="budget-table-wrap">
+    <table class="budget-table">
+      <thead>
+        <tr><th>費用項目</th><th>人民幣（CNY）</th><th>台幣（NTD）</th><th>備註</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>✈️ 來回機票（3人）</td>
+          <td>¥14,000</td>
+          <td class="nt">NT$63,000</td>
+          <td class="note">桃園→海口 早鳥票，每人約NT$21,000</td>
+        </tr>
+        <tr>
+          <td>🏨 住宿（9晚 雙人房）</td>
+          <td>¥1,800</td>
+          <td class="nt">NT$8,100</td>
+          <td class="note">7天連鎖/如家，均價¥200/晚</td>
+        </tr>
+        <tr>
+          <td>🚄 環島高鐵票（3人）</td>
+          <td>¥660</td>
+          <td class="nt">NT$2,970</td>
+          <td class="note">全程7段約¥220/人，二等座</td>
+        </tr>
+        <tr>
+          <td>🚌 當地交通（10天）</td>
+          <td>¥400</td>
+          <td class="nt">NT$1,800</td>
+          <td class="note">公車、景區巴士、少量滴滴</td>
+        </tr>
+        <tr>
+          <td>🎫 景點門票（3人）</td>
+          <td>¥2,000</td>
+          <td class="nt">NT$9,000</td>
+          <td class="note">選4–5個主要景區，避開貴票</td>
+        </tr>
+        <tr>
+          <td>🍜 三餐飲食（3人×10天）</td>
+          <td>¥3,000</td>
+          <td class="nt">NT$13,500</td>
+          <td class="note">早餐含旅館、午晚餐各¥30–50/人</td>
+        </tr>
+        <tr>
+          <td>🎁 伴手禮採購</td>
+          <td>¥1,000</td>
+          <td class="nt">NT$4,500</td>
+          <td class="note">椰子糖、咖啡豆、腰果等</td>
+        </tr>
+        <tr>
+          <td>🔧 雜費（SIM卡/換匯手續費等）</td>
+          <td>¥300</td>
+          <td class="nt">NT$1,350</td>
+          <td class="note">SIM卡約¥50，其他雜支</td>
+        </tr>
+        <tr class="total">
+          <td>💰 3人總計</td>
+          <td>¥23,160</td>
+          <td class="nt">NT$104,220</td>
+          <td class="note">約 NT$34,740/人</td>
+        </tr>
+        <tr class="total">
+          <td>📊 每人平均（含機票）</td>
+          <td>¥7,720</td>
+          <td class="nt">NT$34,740/人</td>
+          <td class="note">10天9夜省錢版</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="budget-bar-row">
+      <p style="font-family:'Noto Serif TC',serif;font-size:.95rem;font-weight:700;color:var(--deep);margin-bottom:.5rem;">📊 費用佔比分析（省錢方案）</p>
+      <div class="bar-item"><div class="bar-label"><span class="bar-name">✈️ 機票</span><span class="bar-val">NT$63,000 (60.4%)</span></div><div class="bar-track"><div class="bar-fill" style="width:60%;background:linear-gradient(90deg,#0B6E8A,#0AADA0);"></div></div></div>
+      <div class="bar-item"><div class="bar-label"><span class="bar-name">🍜 餐飲</span><span class="bar-val">NT$13,500 (13.0%)</span></div><div class="bar-track"><div class="bar-fill" style="width:13%;background:linear-gradient(90deg,#D9553B,#E8804A);"></div></div></div>
+      <div class="bar-item"><div class="bar-label"><span class="bar-name">🎫 景點</span><span class="bar-val">NT$9,000 (8.6%)</span></div><div class="bar-track"><div class="bar-fill" style="width:8.6%;background:linear-gradient(90deg,#2B6840,#3A9050);"></div></div></div>
+      <div class="bar-item"><div class="bar-label"><span class="bar-name">🏨 住宿</span><span class="bar-val">NT$8,100 (7.8%)</span></div><div class="bar-track"><div class="bar-fill" style="width:7.8%;background:linear-gradient(90deg,#C9921A,#E8A820);"></div></div></div>
+      <div class="bar-item"><div class="bar-label"><span class="bar-name">🎁 伴手禮</span><span class="bar-val">NT$4,500 (4.3%)</span></div><div class="bar-track"><div class="bar-fill" style="width:4.3%;background:linear-gradient(90deg,#5B4FE9,#8080EE);"></div></div></div>
+      <div class="bar-item"><div class="bar-label"><span class="bar-name">🚄 交通</span><span class="bar-val">NT$4,770 (4.6%)</span></div><div class="bar-track"><div class="bar-fill" style="width:4.6%;background:linear-gradient(90deg,#0AADA0,#38CEC5);"></div></div></div>
+    </div>
+  </div>
+
+  <!-- 舒適方案 -->
+  <div class="budget-panel" id="b-comfort">
+    <div class="budget-summary">
+      <div class="bs-card">
+        <span class="bs-icon">✈️</span>
+        <div class="bs-label">機票（來回3人）</div>
+        <div class="bs-val">NT$33,000</div>
+        <div class="bs-sub">¥7,333 · 彈性票</div>
+      </div>
+      <div class="bs-card">
+        <span class="bs-icon">🏨</span>
+        <div class="bs-label">住宿（9晚）</div>
+        <div class="bs-val">NT$20,250</div>
+        <div class="bs-sub">均價¥500/晚</div>
+      </div>
+      <div class="bs-card">
+        <span class="bs-icon">🚄</span>
+        <div class="bs-label">高鐵+交通</div>
+        <div class="bs-val">NT$7,200</div>
+        <div class="bs-sub">¥1,600 · 3人合計</div>
+      </div>
+      <div class="bs-card">
+        <span class="bs-icon">🎫</span>
+        <div class="bs-label">景點門票</div>
+        <div class="bs-val">NT$18,000</div>
+        <div class="bs-sub">¥4,000 · 3人合計</div>
+      </div>
+      <div class="bs-card">
+        <span class="bs-icon">🍜</span>
+        <div class="bs-label">餐飲（10天）</div>
+        <div class="bs-val">NT$27,000</div>
+        <div class="bs-sub">¥200/人/天</div>
+      </div>
+      <div class="bs-card" style="border-color:rgba(217,85,59,.3);">
+        <span class="bs-icon">🎁</span>
+        <div class="bs-label">伴手禮雜費</div>
+        <div class="bs-val">NT$13,500</div>
+        <div class="bs-sub">¥3,000 · 預算</div>
+      </div>
+    </div>
+
+    <div class="budget-table-wrap">
+    <table class="budget-table">
+      <thead>
+        <tr><th>費用項目</th><th>人民幣（CNY）</th><th>台幣（NTD）</th><th>備註</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>✈️ 來回機票（3人）</td>
+          <td>¥22,000</td>
+          <td class="nt">NT$99,000</td>
+          <td class="note">彈性票/商務艙升等，每人約NT$33,000</td>
+        </tr>
+        <tr>
+          <td>🏨 住宿（9晚 雙人房）</td>
+          <td>¥4,500</td>
+          <td class="nt">NT$20,250</td>
+          <td class="note">漢庭/全季三星，均價¥500/晚</td>
+        </tr>
+        <tr>
+          <td>🚄 環島高鐵票（3人）</td>
+          <td>¥1,000</td>
+          <td class="nt">NT$4,500</td>
+          <td class="note">含部分一等座升等</td>
+        </tr>
+        <tr>
+          <td>🚌 當地交通（10天）</td>
+          <td>¥600</td>
+          <td class="nt">NT$2,700</td>
+          <td class="note">滴滴出行為主，舒適快捷</td>
+        </tr>
+        <tr>
+          <td>🎫 景點門票（3人）</td>
+          <td>¥4,000</td>
+          <td class="nt">NT$18,000</td>
+          <td class="note">含全部主要5A景區票</td>
+        </tr>
+        <tr>
+          <td>🍜 三餐飲食（3人×10天）</td>
+          <td>¥6,000</td>
+          <td class="nt">NT$27,000</td>
+          <td class="note">含海鮮大餐、特色餐廳</td>
+        </tr>
+        <tr>
+          <td>🏄 水上活動體驗</td>
+          <td>¥1,500</td>
+          <td class="nt">NT$6,750</td>
+          <td class="note">衝浪課、浮潛套裝、水上項目</td>
+        </tr>
+        <tr>
+          <td>🎁 伴手禮採購</td>
+          <td>¥3,000</td>
+          <td class="nt">NT$13,500</td>
+          <td class="note">含咖啡豆、沉香、珠寶等</td>
+        </tr>
+        <tr>
+          <td>🔧 雜費（保險/SIM/換匯等）</td>
+          <td>¥600</td>
+          <td class="nt">NT$2,700</td>
+          <td class="note">含旅遊保險約NT$1,500</td>
+        </tr>
+        <tr class="total">
+          <td>💰 3人總計</td>
+          <td>¥43,200</td>
+          <td class="nt">NT$194,400</td>
+          <td class="note">約 NT$64,800/人</td>
+        </tr>
+        <tr class="total">
+          <td>📊 每人平均（含機票）</td>
+          <td>¥14,400</td>
+          <td class="nt">NT$64,800/人</td>
+          <td class="note">10天9夜舒適版</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="budget-bar-row">
+      <p style="font-family:'Noto Serif TC',serif;font-size:.95rem;font-weight:700;color:var(--deep);margin-bottom:.5rem;">📊 費用佔比分析（舒適方案）</p>
+      <div class="bar-item"><div class="bar-label"><span class="bar-name">✈️ 機票</span><span class="bar-val">NT$99,000 (50.9%)</span></div><div class="bar-track"><div class="bar-fill" style="width:51%;background:linear-gradient(90deg,#0B6E8A,#0AADA0);"></div></div></div>
+      <div class="bar-item"><div class="bar-label"><span class="bar-name">🍜 餐飲</span><span class="bar-val">NT$27,000 (13.9%)</span></div><div class="bar-track"><div class="bar-fill" style="width:14%;background:linear-gradient(90deg,#D9553B,#E8804A);"></div></div></div>
+      <div class="bar-item"><div class="bar-label"><span class="bar-name">🏨 住宿</span><span class="bar-val">NT$20,250 (10.4%)</span></div><div class="bar-track"><div class="bar-fill" style="width:10.4%;background:linear-gradient(90deg,#C9921A,#E8A820);"></div></div></div>
+      <div class="bar-item"><div class="bar-label"><span class="bar-name">🎫 景點</span><span class="bar-val">NT$18,000 (9.3%)</span></div><div class="bar-track"><div class="bar-fill" style="width:9.3%;background:linear-gradient(90deg,#2B6840,#3A9050);"></div></div></div>
+      <div class="bar-item"><div class="bar-label"><span class="bar-name">🎁 伴手禮</span><span class="bar-val">NT$13,500 (6.9%)</span></div><div class="bar-track"><div class="bar-fill" style="width:6.9%;background:linear-gradient(90deg,#5B4FE9,#8080EE);"></div></div></div>
+      <div class="bar-item"><div class="bar-label"><span class="bar-name">🏄 水上活動</span><span class="bar-val">NT$6,750 (3.5%)</span></div><div class="bar-track"><div class="bar-fill" style="width:3.5%;background:linear-gradient(90deg,#38CEC5,#60E8E0);"></div></div></div>
+    </div>
+  </div>
+
+  <!-- 省錢技巧 -->
+  <div class="budget-panel" id="b-tips">
+    <div class="saving-tips">
+
+      <div class="saving-tip">
+        <div class="st-ttl">✈️ 機票省錢術</div>
+        <p>提前 2–3 個月於 <strong>Trip.com（攜程）</strong> 或 <strong>Skyscanner</strong> 比價，早鳥票最多省 40%。避開五一、十一、春節黃金週，選擇週二或週三出發票價最低。廈門中轉班次有時比直航便宜 NT$3,000–5,000。</p>
+      </div>
+
+      <div class="saving-tip">
+        <div class="st-ttl">🏨 住宿省錢術</div>
+        <p>選擇<strong>漢庭、7天、如家</strong>等連鎖品牌，用攜程 APP 預訂享會員價，含早餐每晚 ¥150–250（NT$675–1,125）即可入住乾淨舒適的三星旅館。旺季提前1個月訂，淡季當天訂反而更便宜。</p>
+      </div>
+
+      <div class="saving-tip">
+        <div class="st-ttl">🚄 高鐵省錢術</div>
+        <p>搭乘<strong>二等座</strong>即舒適，全程7段票價約¥220/人（NT$990）。在 12306 APP 用護照號碼登錄提前購票，熱門班次非常搶手。沿線停靠型列車（非高速）票價更低但時間較長，不趕時間可選擇。</p>
+      </div>
+
+      <div class="saving-tip">
+        <div class="st-ttl">🎫 景點省錢術</div>
+        <p>天涯海角、火山口等景區可購<strong>年票套票</strong>，多個景點套票比單買便宜 20–30%。部分景區兒童身高未達 1.2 公尺免費入場。微信小程式「美團」常有景點門票折扣，購票前先查一下。</p>
+      </div>
+
+      <div class="saving-tip">
+        <div class="st-ttl">🍜 餐飲省錢術</div>
+        <p>早餐用旅館附贈，中餐選<strong>在地麵食攤、小吃街</strong>，一餐每人 ¥15–30（NT$68–135）即可吃飽喝足。晚餐選海鮮大排檔（非觀光區），避開景區餐廳（貴 50–100%），用大眾點評查評分。</p>
+      </div>
+
+      <div class="saving-tip">
+        <div class="st-ttl">🚕 交通省錢術</div>
+        <p>景區間善用<strong>免費接駁巴士</strong>（需憑門票搭乘）。市區移動優先搭公車（¥1–2）或共享單車（¥1.5/30分鐘）。滴滴出行選「拼車」模式，費用可節省 30–40%。高德地圖查詢公車路線最準確。</p>
+      </div>
+
+      <div class="saving-tip">
+        <div class="st-ttl">💱 換匯省錢術</div>
+        <p>在台灣銀行（土地銀行、台灣銀行匯率最優）出發前換好人民幣，匯率比在中國機場換好 3–5%。約換 ¥3,000–4,000 現金即可，其餘使用支付寶掃碼付款（綁定境外信用卡）最划算。</p>
+      </div>
+
+      <div class="saving-tip">
+        <div class="st-ttl">🎁 購物省錢術</div>
+        <p>椰子糖、腰果、咖啡豆等食品在<strong>超市（大潤發、人人樂）</strong>買比景區攤位便宜 40–60%。三亞免稅城商品比台灣便宜，但需注意每次限額 ¥100,000，保留發票並如實申報入台。</p>
+      </div>
+
+    </div>
+
+    <div style="background:var(--white);border-radius:16px;padding:1.8rem;margin-top:1.5rem;border:1px solid rgba(201,146,26,.2);">
+      <p style="font-family:'Noto Serif TC',serif;font-weight:700;color:var(--deep);margin-bottom:1rem;font-size:1rem;">💡 匯率換算速查表（1 CNY ≈ 4.5 NTD）</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem;">
+        <div style="text-align:center;padding:.7rem;background:#F7EFE0;border-radius:10px;"><div style="font-size:.72rem;color:#889;">¥10 人民幣</div><div style="font-size:1.1rem;font-weight:700;color:var(--coral);font-family:'Cormorant Garamond',serif;">NT$45</div></div>
+        <div style="text-align:center;padding:.7rem;background:#F7EFE0;border-radius:10px;"><div style="font-size:.72rem;color:#889;">¥50 人民幣</div><div style="font-size:1.1rem;font-weight:700;color:var(--coral);font-family:'Cormorant Garamond',serif;">NT$225</div></div>
+        <div style="text-align:center;padding:.7rem;background:#F7EFE0;border-radius:10px;"><div style="font-size:.72rem;color:#889;">¥100 人民幣</div><div style="font-size:1.1rem;font-weight:700;color:var(--coral);font-family:'Cormorant Garamond',serif;">NT$450</div></div>
+        <div style="text-align:center;padding:.7rem;background:#F7EFE0;border-radius:10px;"><div style="font-size:.72rem;color:#889;">¥200 人民幣</div><div style="font-size:1.1rem;font-weight:700;color:var(--coral);font-family:'Cormorant Garamond',serif;">NT$900</div></div>
+        <div style="text-align:center;padding:.7rem;background:#F7EFE0;border-radius:10px;"><div style="font-size:.72rem;color:#889;">¥500 人民幣</div><div style="font-size:1.1rem;font-weight:700;color:var(--coral);font-family:'Cormorant Garamond',serif;">NT$2,250</div></div>
+        <div style="text-align:center;padding:.7rem;background:#F2E0C0;border-radius:10px;border:1px solid rgba(201,146,26,.3);"><div style="font-size:.72rem;color:#889;">¥1,000 人民幣</div><div style="font-size:1.1rem;font-weight:700;color:var(--coral);font-family:'Cormorant Garamond',serif;">NT$4,500</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ================================
+     FOOTER
+================================ -->
+<footer>
+  <span class="footer-logo">🏝 海南島環島高鐵遊</span>
+  <p>由 <strong>旅遊專家</strong> 整理撰寫 · 台灣出發完全攻略</p>
+  <p>景點票價、飯店資訊、交通班次可能隨季節及政策調整，出發前請再次確認最新資訊</p>
+  <p style="margin-top:.5rem;font-size:.78rem;color:rgba(255,255,255,.25);">東環線 · 西環線 · 10日行程 · 8大站點 · 親子友善 · 2025–2026版</p>
+</footer>
+
+
+<!-- ================================
+     JAVASCRIPT
+================================ -->
+<script>
+// Stars
+(function(){
+  const c=document.getElementById('stars');
+  for(let i=0;i<80;i++){
+    const s=document.createElement('div');
+    s.className='star';
+    const size=Math.random()*3+1;
+    Object.assign(s.style,{
+      width:size+'px',height:size+'px',
+      left:Math.random()*100+'%',top:Math.random()*70+'%',
+      animationDelay:Math.random()*3+'s',
+      animationDuration:(Math.random()*2+2)+'s'
+    });
+    c.appendChild(s);
+  }
+})();
+
+// Day tabs
+function showDay(idx, btn){
+  document.querySelectorAll('.day-block').forEach(b=>b.classList.remove('visible'));
+  document.querySelectorAll('.day-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('day'+idx).classList.add('visible');
+  btn.classList.add('active');
+}
+
+// Spot tabs
+function showSpots(cat, btn){
+  document.querySelectorAll('.spot-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.spot-panel').forEach(p=>p.classList.remove('visible'));
+  if(cat==='all'){
+    document.getElementById('sp-all').classList.add('visible');
+    return;
+  }
+  const panel=document.getElementById('sp-'+cat);
+  if(!panel.hasChildNodes()){
+    const src=document.getElementById('sp-all');
+    src.querySelectorAll('.spot-card').forEach(card=>{
+      if(card.dataset.cat && card.dataset.cat.includes(cat)){
+        panel.appendChild(card.cloneNode(true));
+      }
+    });
+  }
+  panel.classList.add('visible');
+}
+
+// Budget tabs
+function showBudget(id, btn){
+  document.querySelectorAll('.budget-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.budget-panel').forEach(p=>p.classList.remove('visible'));
+  document.getElementById('b-'+id).classList.add('visible');
+}
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in-view');});
+},{threshold:.15});
+document.querySelectorAll('.hotel-card,.food-card,.sv-card,.tip-card,.spot-card').forEach(el=>{
+  el.classList.add('fade-up');obs.observe(el);
+});
+</script>
+</body>
+</html>
